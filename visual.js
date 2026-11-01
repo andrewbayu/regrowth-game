@@ -43,7 +43,6 @@ function animateDialogue() {
       return;
     }
     element.textContent = '';
-    window.dispatchEvent(new Event('regrowth:dialogue'));
     let index = 0;
     const timer = setInterval(() => {
       if (!element.isConnected) {
@@ -51,6 +50,9 @@ function animateDialogue() {
         return;
       }
       element.textContent += text[index++];
+      if (index === 6 || index === 18) {
+        window.dispatchEvent(new Event('regrowth:dialogue'));
+      }
       if (index >= text.length) clearInterval(timer);
     }, 20);
   });
