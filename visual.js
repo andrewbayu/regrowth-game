@@ -88,15 +88,15 @@ function showArrival() {
       <div class="story-body">
         <div class="story-panel">
           <div class="speaker">Kamu · CMO Baru</div>
-          <div class="dialogue">“Setelah tujuh ronde interview gila dan tes psikologi yang absurd, akhirnya hari ini tiba. Ini dia menara kantor Ruang Tumbuh.”</div>
+          <div class="dialogue">“Tujuh ronde interview kemudian, akhirnya aku sampai di kantor Ruang Tumbuh.”</div>
           <h2>Tiba di depan kantor Ruang Tumbuh</h2>
-          <p>Kamu berdiri di pelataran depan gedung perkantoran megah Jakarta. Menurut kabar burung, kas perusahaan tinggal 60 hari, penjualan turun drastis, dan para dewan direksi sudah menunggu di lantai 12. Jam di tangan menunjukkan pukul 08.45 WIB. Apa yang kamu lakukan sebelum melangkah masuk?</p>
+          <p>Kamu tiba di kantor Jakarta pukul 08.45. Kas tinggal 60 hari, penjualan anjlok, dan direksi menunggu di lantai 12. Apa langkahmu sebelum masuk?</p>
         </div>
         <div class="story-question">Apa tindakan pertamamu di pelataran gedung?</div>
         <div class="story-choices">
-          <button class="story-choice" id="arrival-enter">Langsung melangkah tegap masuk lobi menemui Damar dan dewan direksi →</button>
-          <button class="story-choice" id="arrival-smoke">Santai sejenak sebat ngerokok kretek di pojokan parkiran mobil sambil mengumpulkan nyawa →</button>
-          <button class="story-choice" id="arrival-starling">Beli kopi keliling (starling) di trotoar depan gedung sambil menyusun strategi di kepala →</button>
+          <button class="story-choice" id="arrival-enter">Masuk menemui Damar dan direksi →</button>
+          <button class="story-choice" id="arrival-smoke">Sebat kretek sebentar di pojok parkiran →</button>
+          <button class="story-choice" id="arrival-starling">Beli kopi starling sambil menyusun strategi →</button>
         </div>
       </div>
     </section>
@@ -130,9 +130,9 @@ function showStarling() {
       <div class="story-body">
         <div class="story-panel">
           <div class="speaker">Bang Udin · Barista Sepeda Starling</div>
-          <div class="dialogue">“Kopi tubruk manis satu ya, Mas Bos. Kelihatan tegang amat mukanya. Hidup itu diseruput pelan-pelan, jangan kalah sama target korporat.”</div>
+          <div class="dialogue">“Kopi tubruk manis, Mas Bos. Santai dulu, jangan kalah sama target korporat.”</div>
           <h2>Secangkir kafein jalanan</h2>
-          <p>Seruputan kopi panas di trotoar mengembalikan fokus dan ketenanganmu. Kamu mencatat poin-poin penting di aplikasi notes handphone. <strong>Insight +5, Chaos +4</strong>. Sekarang saatnya melangkah masuk ke dalam gedung.</p>
+          <p>Kopi panas mengembalikan fokusmu. Kamu mencatat strategi di ponsel. <strong>Insight +5, Chaos +4</strong>. Sekarang saatnya melangkah masuk ke dalam gedung.</p>
         </div>
         <div class="story-choices" style="margin-top:16px">
           <button class="story-choice" id="starling-enter">Melangkah masuk ke lobi menemui Damar →</button>
@@ -259,9 +259,9 @@ function showWelcome() {
       <div class="story-body">
         <div class="story-panel">
           <div class="speaker">Damar · CEO</div>
-          <div class="dialogue">“Syukurlah kamu sudah sampai! Masuk ke lift sekarang—Mira, Bagas, dan komisaris sudah berkumpul di ruang sidang lantai 12. Kas kita sekarat dan unicorn sebelah mulai menyerang, jadi siapkan nyalimu!”</div>
+          <div class="dialogue">“Akhirnya sampai! Mira, Bagas, dan komisaris menunggu di lantai 12. Kas menipis dan kompetitor menyerang. Siap?”</div>
           <h2>Disambut di Lobi PT Ruang Tumbuh</h2>
-          <p>Begitu kamu melewati gerbang kaca lobi, Damar langsung menghampirimu di depan lift eksekutif sambil memegang setumpuk map merah. Misi penyelamatan selama 60 hari resmi dimulai detik ini.</p>
+          <p>Damar menyambutmu di depan lift dengan setumpuk map. Misi penyelamatan 60 hari dimulai.</p>
         </div>
         <div class="story-choices">
           <button class="story-choice" id="board">Naik lift ke ruang sidang lantai 12 →</button>
@@ -434,24 +434,24 @@ function showResult() {
 const travelScenes = {
   travel_transport: {
     background: 'street-traffic', location: 'DEPAN KANTOR', title: 'Berangkat ke Senopati',
-    speaker: 'Damar · CEO', dialogue: 'Gue duluan, ya. Aldi udah buka laptopnya. Pilih kendaraan yang bikin lo bisa nyusul sebelum dia tutup presentasi!',
-    body: 'Dari depan kantor, kamu punya tiga pilihan untuk menyusul Damar ke kafe. Jalan utama tampak padat, tapi keadaan Jakarta bisa berubah setiap menit.',
+    speaker: 'Damar · CEO', dialogue: 'Gue duluan! Susul cepat, Aldi sudah mulai presentasi.',
+    body: 'Damar menunggu di kafe. Jalan utama tampak padat; kamu harus memilih kendaraan.',
     question: 'Mau berangkat naik apa?',
     options: [['Pakai mobil kantor', 'travel_car'], ['Naik Gojek', 'travel_gojek'], ['Naik MRT', 'travel_mrt']]
   },
   travel_car: {
     background: 'travel-traffic', location: 'JALAN SUDIRMAN', title: 'Ada apa di depan?',
-    speaker: 'Pak Joko · Sopir Kantor', dialogue: 'Waduh, Pak. Dari tadi mobilnya nggak gerak. Di depan kayaknya ada kerumunan, tapi saya belum bisa lihat jelas.',
-    body: 'Lampu rem memanjang sampai tikungan. Di kejauhan terdengar suara pengeras suara dan orang-orang memenuhi jalan. Damar mengirim pesan: “Cepat, Aldi sudah pesan kopi kedua.”',
+    speaker: 'Pak Joko · Sopir Kantor', dialogue: 'Mobilnya nggak gerak, Pak. Di depan ada kerumunan.',
+    body: 'Macet total. Terdengar pengeras suara di depan. Damar mengirim pesan: “Cepat, Aldi sudah pesan kopi kedua.”',
     question: 'Apa yang kamu lakukan?',
-    options: [['Penasaran, turun dan lihat keramaiannya', 'travel_demo'], ['Tetap di mobil dan lanjut saat jalan terbuka', 'travel_arrive']]
+    options: [['Turun dan lihat keramaian', 'travel_demo'], ['Tunggu di mobil hingga jalan terbuka', 'travel_arrive']]
   },
   travel_demo: {
     background: 'travel-protest-v2', location: 'TENGAH KOTA', title: 'Terseret arus massa',
-    speaker: 'Peserta Aksi', dialogue: 'Mas, jangan bengong di tengah jalan! Kalau mau ikut, sini pegang kardusnya!',
-    body: 'Ternyata ada aksi demonstrasi. Seorang peserta menyodorkan kardus bekas bertuliskan tuntutan yang belum sempat kamu baca. Sopir kantor menunggu di ujung jalan sambil melambaikan tangan.',
+    speaker: 'Peserta Aksi', dialogue: 'Mas, kalau mau ikut, pegang kardus ini!',
+    body: 'Ada demonstrasi. Seorang peserta menyodorkan kardus dengan tuntutan yang belum kamu baca. Sopir menunggumu di ujung jalan.',
     question: 'Kamu memilih apa?',
-    options: [['Ikutan demo dan angkat kardusnya', 'travel_arrest_demo'], ['Balik ke mobil dan lanjut ke kafe', 'travel_arrive']]
+    options: [['Ikut demo dan angkat kardus', 'travel_arrest_demo'], ['Kembali ke mobil dan lanjut ke kafe', 'travel_arrive']]
   },
   travel_gojek: {
     background: 'travel-gojek', location: 'SENOPATI', title: 'Tiba tanpa drama',
@@ -461,28 +461,28 @@ const travelScenes = {
   },
   travel_mrt: {
     background: 'travel-mrt-v2', location: 'DI DALAM MRT', title: 'Penumpang paling tidak terduga',
-    speaker: 'Kamu · CMO Baru', dialogue: 'Sebentar... itu Presiden? Di gerbong yang sama? Ini Jakarta atau simulasi?',
-    body: 'Di ujung gerbong, Presiden fiksi negeri ini sedang meninjau transportasi umum bersama pengawal. Pintu akan terbuka di stasiun berikutnya—waktumu untuk mencapai Senopati makin tipis.',
+    speaker: 'Kamu · CMO Baru', dialogue: 'Sebentar... itu Presiden? Di gerbong yang sama?',
+    body: 'Presiden fiksi sedang meninjau MRT bersama pengawal. Stasiunmu berikutnya; waktu ke Senopati makin mepet.',
     question: 'Apa yang kamu lakukan?',
-    options: [['Cuek saja dan turun di stasiun tujuan', 'travel_arrive'], ['Menyapa Presiden', 'travel_arrest_mrt']]
+    options: [['Cuek dan turun di stasiun tujuan', 'travel_arrive'], ['Menyapa Presiden', 'travel_arrest_mrt']]
   },
   travel_arrive: {
     background: 'senopati-cafe', location: 'KAFE SENOPATI', title: 'Akhirnya sampai',
     speaker: 'Damar · CEO', dialogue: 'Akhirnya! Cepat duduk. Aldi baru saja buka slide yang kayaknya penting.',
-    body: 'Kamu berhasil menyusul Damar. Di meja seberang, Aldi sedang memamerkan presentasinya. Misi mengintai kompetitor pun dimulai.',
+    body: 'Damar sudah menunggu. Di meja seberang, Aldi memamerkan presentasinya.',
     question: '', options: [['Masuk ke kafe', 'game']]
   }
 };
 
 const travelEndings = {
   travel_arrest_demo: {
-    title: 'CMO di Balik Jeruji',
-    body: 'Baru saja kamu mengangkat kardus, barisan pengamanan bergerak membubarkan kerumunan. Dalam kekacauan, kamu ikut diamankan bersama massa. Ponselmu tertinggal di mobil, Damar menunggu di kafe, dan rapat terpenting minggu ini resmi berubah menjadi urusan kantor polisi. Karier CMO-mu berakhir sebelum sempat memesan kopi.',
+    title: 'You may lost the fight. But you won the war and respect.',
+    body: 'Saat massa dibubarkan, kamu ikut ditangkap. Misi Senopati gagal, tapi solidaritasmu tidak dilupakan.',
     note: 'Satu kardus. Satu perjalanan yang melenceng jauh.'
   },
   travel_arrest_mrt: {
     title: 'Salam yang Terlalu Mahal',
-    body: '“Pak Presiden, boleh networking sebentar?” sapamu sambil meraih kartu nama. Pengawal salah mengira gerakan mendadakmu sebagai ancaman dan langsung mengamankanmu. Beberapa jam kemudian, kamu masih di sel menunggu kesalahpahaman dijelaskan. Damar sudah menyelesaikan kopi ketiganya sendirian; misi Senopati gagal total.',
+    body: 'Saat menyapa Presiden, kamu meraih kartu nama. Pengawal mengira itu ancaman dan membawamu ke sel. Damar menunggu sia-sia di kafe.',
     note: 'Kadang kartu nama perlu menunggu waktu yang tepat.'
   }
 };
@@ -492,7 +492,8 @@ function showTravel() {
   const ending = travelEndings[state.page];
   if (ending) {
     main.innerHTML = `
-      <section class="story-screen result-screen" style="background-image:url(assets/travel-cell.png)">
+      <section class="story-screen result-screen prison-ending" style="background-image:url(assets/${state.page === 'travel_arrest_demo' ? 'travel-salute.png' : 'travel-cell.png'})">
+        <div class="ending-art-space" aria-hidden="true"></div>
         <div class="result-content">
           <div class="eyebrow" style="color:#ff8569">★ BAD ENDING ★</div>
           <h1>${ending.title}</h1><p class="result-ending">${ending.body}</p>

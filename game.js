@@ -8,25 +8,25 @@ const weeks = [
     speaker: 'Damar · CEO',
     sprite: 'founder',
     background: 'boardroom',
-    intro: 'Pintu ruang sidang lantai 12 tertutup rapat. Di layar proyektor terpampang fakta mengerikan: kas hanya cukup untuk 60 hari, tagihan misterius $15.000/bulan mengalir ke cabang antah-berantah di São Paulo, Brazil, dan kompetitor mulai membajak pengajar terbaik.',
+    intro: 'Kas tinggal 60 hari. Ada tagihan misterius $15.000 per bulan ke cabang São Paulo, sementara kompetitor membajak pengajar terbaik.',
     dialogue: 'Semua mata direksi sekarang menatapmu. BoD menuntut terobosan gila dalam 10 minggu ke depan. Manuver pertamamu apa?',
     question: 'Di depan dewan direksi, langkah pertama apa yang kamu ambil untuk membongkar krisis ini?',
     variants: [{
-      body: 'Di meja bundar, jajaran direktur menuntut kejelasan ke mana larinya dana perusahaan dan bagaimana menghentikan pendarahan kas.',
-      dialogue: 'Kita nggak bisa pakai cara normatif lagi. Pilih satu manuver berani buat minggu pertama.',
+      body: 'Direksi menuntut asal kebocoran dan cara menghentikannya.',
+      dialogue: 'Lupakan cara normatif. Apa manuver pertamamu?',
       options: [
         [
-          'Audit aliran dana misterius ke cabang Brazil dan telusuri siapa yang mengesahkannya.',
+          'Audit dana Brazil dan cari siapa yang menyetujuinya.',
           { cash: -3, insight: 14, chaos: 10, team: 4 },
           'Kamu menemukan dokumen transfer rahasia ke São Paulo berkedok biaya lisensi software.'
         ],
         [
-          'Tugaskan Kevin (anak magang) menyusup ke Discord rahasia kompetitor CakapKilat.',
+          'Suruh Kevin menyusup ke Discord rahasia CakapKilat.',
           { cash: -2, insight: 12, chaos: 16, team: 6 },
           'Kevin berhasil menyusup memakai avatar anime dan mulai memantau chat tim marketing lawan.'
         ],
         [
-          'Pangkas semua budget iklan berbayar dan hentikan fasilitas kopi susu di pantry.',
+          'Pangkas iklan dan hapus kopi susu dari pantry.',
           { cash: 10, team: -14, trust: -4, chaos: -6 },
           'Kas sedikit tertahan, tapi tim sales mulai mogok kerja karena kekurangan asupan kafein.'
         ]
@@ -40,66 +40,66 @@ const weeks = [
     speaker: 'Aldi · CMO CakapKilat',
     sprite: 'aldi',
     background: 'senopati-cafe',
-    intro: 'Intelijen Kevin mengabarkan Aldi Pratama—CMO sombong dari unicorn kompetitor yang selalu pakai rompi Patagonia—sedang nongkrong di kafe artisanal Senopati sambil flexing pitch deck rahasia kepada investor asing. Kamu dan Damar meluncur ke lokasi.',
+    intro: 'Kevin menemukan Aldi, CMO CakapKilat, memamerkan pitch deck rahasia di kafe Senopati. Kamu menyusul Damar ke sana.',
     variants: [
       {
-        body: 'Audit dana Brazil membuka petunjuk bahwa CakapKilat mencoba membajak teknologi yang sama. Kamu mengintai Aldi dari balik tanaman hias monstera.',
-        dialogue: 'Bro, Ruang Tumbuh itu fundamentally obsolete. Bulan depan kita luncurkan fitur AI Matrix yang bikin mereka mati kutu.',
+        body: 'Audit Brazil mengisyaratkan CakapKilat membajak teknologi yang sama. Kamu mengintai Aldi.',
+        dialogue: 'Ruang Tumbuh sudah usang. AI Matrix kami meluncur bulan depan!',
         options: [
           [
-            'Menyamar jadi barista, antar oat latte ke mejanya sambil diam-diam melirik laptop Aldi.',
+            'Menyamar jadi barista dan intip laptop Aldi.',
             { insight: 15, trust: 6, chaos: 12, cash: -3 },
             'Kamu berhasil mencatat celah fatal arsitektur platform CakapKilat tanpa dicurigai.'
           ],
           [
-            'Duduk di meja sebelah dan pura-pura telepon keras-keras soal AI Quantum palsu.',
+            'Pura-pura telepon soal AI Quantum palsu di meja sebelah.',
             { insight: 10, chaos: 18, team: 4, cash: -4 },
             'Aldi terpancing emosi dan membocorkan tanggal rilis kampanye mereka demi pamer.'
           ],
           [
-            'Suruh Damar pura-pura pingsan di kasir agar kamu bisa menyambar lembaran catatan Aldi.',
+            'Suruh Damar pingsan agar kamu bisa mengambil catatan Aldi.',
             { insight: 12, chaos: 24, trust: -8, cash: -5 },
             'Catatan didapat lewat drama teatrikal Damar, meski satpam kafe memandang curiga.'
           ]
         ]
       },
       {
-        body: 'Kevin menyadap jadwal meeting Aldi di Senopati. Kamu tiba tepat saat Aldi membuka slide presentasi keuangannya.',
-        dialogue: 'Startup lokal lain cuma bakar duit tanpa retensi. CakapKilat yang pegang kendali pasar edtech Indonesia.',
+        body: 'Kevin membocorkan jadwal Aldi. Kamu tiba saat ia membuka presentasi keuangan.',
+        dialogue: 'Startup lain bakar duit tanpa retensi. CakapKilat menguasai edtech!',
         options: [
           [
-            'Menyamar jadi barista, antar oat latte ke mejanya sambil diam-diam melirik laptop Aldi.',
+            'Menyamar jadi barista dan intip laptop Aldi.',
             { insight: 15, trust: 6, chaos: 12, cash: -3 },
             'Kamu berhasil mencatat celah fatal arsitektur platform CakapKilat tanpa dicurigai.'
           ],
           [
-            'Duduk di meja sebelah dan pura-pura telepon keras-keras soal AI Quantum palsu.',
+            'Pura-pura telepon soal AI Quantum palsu di meja sebelah.',
             { insight: 10, chaos: 18, team: 4, cash: -4 },
             'Aldi terpancing emosi dan membocorkan tanggal rilis kampanye mereka demi pamer.'
           ],
           [
-            'Suruh Damar pura-pura pingsan di kasir agar kamu bisa menyambar lembaran catatan Aldi.',
+            'Suruh Damar pingsan agar kamu bisa mengambil catatan Aldi.',
             { insight: 12, chaos: 24, trust: -8, cash: -5 },
             'Catatan didapat lewat drama teatrikal Damar, meski satpam kafe memandang curiga.'
           ]
         ]
       },
       {
-        body: 'Tim yang lemas karena kopi pantry dipangkas diajak Damar mengintai kompetitor di Senopati untuk membalas dendam.',
-        dialogue: 'Ngapain kalian lirik-lirik meja gue? Pelanggan kalian minggu depan bakal pindah ke aplikasi kita semua.',
+        body: 'Setelah kopi pantry dipangkas, Damar mengajak tim mengintai kompetitor.',
+        dialogue: 'Ngapain lirik-lirik? Minggu depan pelanggan kalian pindah ke kami!',
         options: [
           [
-            'Menyamar jadi barista, antar oat latte ke mejanya sambil diam-diam melirik laptop Aldi.',
+            'Menyamar jadi barista dan intip laptop Aldi.',
             { insight: 15, trust: 6, chaos: 12, cash: -3 },
             'Kamu berhasil mencatat celah fatal arsitektur platform CakapKilat tanpa dicurigai.'
           ],
           [
-            'Duduk di meja sebelah dan pura-pura telepon keras-keras soal AI Quantum palsu.',
+            'Pura-pura telepon soal AI Quantum palsu di meja sebelah.',
             { insight: 10, chaos: 18, team: 4, cash: -4 },
             'Aldi terpancing emosi dan membocorkan tanggal rilis kampanye mereka demi pamer.'
           ],
           [
-            'Suruh Damar pura-pura pingsan di kasir agar kamu bisa menyambar lembaran catatan Aldi.',
+            'Suruh Damar pingsan agar kamu bisa mengambil catatan Aldi.',
             { insight: 12, chaos: 24, trust: -8, cash: -5 },
             'Catatan didapat lewat drama teatrikal Damar, meski satpam kafe memandang curiga.'
           ]
@@ -114,66 +114,66 @@ const weeks = [
     speaker: 'Madam Aurel · Spiritual HRD',
     sprite: 'aurel',
     background: 'meeting',
-    intro: 'Komisaris utama menolak menyetujui anggaran darurat sebelum Madam Aurel membersihkan ruang server kantor. Konon ada energi gaib yang membuat bounce rate tembus 89%. Ruangan server kini dipenuhi asap dupa dan bunga tujuh rupa.',
+    intro: 'Komisaris menahan anggaran darurat sampai Madam Aurel meruwat server, yang katanya membuat bounce rate 89%. Dupa dan bunga memenuhi ruangan.',
     variants: [
       {
-        body: 'Berbekal intel Senopati, kamu berniat membenahi landing page, namun ruang server malah ditutup kain hitam oleh Madam Aurel.',
-        dialogue: 'Aura kas kalian tersumbat cakra gelap di server nomor empat! Kalau mau sales meledak, kabel fiber optic harus dimandikan air kembang!',
+        body: 'Kamu hendak membenahi landing page, tapi Aurel menutup server dengan kain hitam.',
+        dialogue: 'Cakra gelap menyumbat kas! Mandikan kabel fiber dengan air kembang!',
         options: [
           [
-            'Ikuti ritual penuh: mandikan rak server dengan air kembang dan pasang dupa fengshui.',
+            'Ikuti ritual: siram server dengan air kembang dan pasang dupa.',
             { trust: 14, team: -8, chaos: 22, cash: -4 },
             'Komisaris kagum pada kepatuhanmu dan membuka akses rekening, meski engineering histeris.'
           ],
           [
-            'Tukar dupa dengan vape rasa berries dan sebut grafik analitik sebagai ramalan data modern.',
+            'Ganti dupa dengan vape, lalu sebut analitik ramalan modern.',
             { insight: 12, trust: 10, chaos: 12, cash: -2 },
             'Madam Aurel terkesima oleh visualisasi data dan mengesahkan aura positif pertumbuhan.'
           ],
           [
-            'Tolak mentah-mentah ritual klenik dan usir Madam Aurel keluar dari ruang server.',
+            'Tolak ritual dan usir Madam Aurel dari ruang server.',
             { team: 14, trust: -16, chaos: -10, cash: 0 },
             'Tim developer bersorak gembira, tapi komisaris mengancam membekukan operasional.'
           ]
         ]
       },
       {
-        body: 'Geger pengintaian Senopati membuat komisaris panik dan mengundang Madam Aurel untuk meruwat seluruh lantai kantor.',
-        dialogue: 'Ada hawa mata-mata dan sengkolo di kantor ini! Kita harus bersihkan aura ruang server sebelum melangkah.',
+        body: 'Pengintaian Senopati membuat komisaris mengundang Aurel meruwat kantor.',
+        dialogue: 'Ada hawa mata-mata! Kita harus bersihkan aura server.',
         options: [
           [
-            'Ikuti ritual penuh: mandikan rak server dengan air kembang dan pasang dupa fengshui.',
+            'Ikuti ritual: siram server dengan air kembang dan pasang dupa.',
             { trust: 14, team: -8, chaos: 22, cash: -4 },
             'Komisaris kagum pada kepatuhanmu dan membuka akses rekening, meski engineering histeris.'
           ],
           [
-            'Tukar dupa dengan vape rasa berries dan sebut grafik analitik sebagai ramalan data modern.',
+            'Ganti dupa dengan vape, lalu sebut analitik ramalan modern.',
             { insight: 12, trust: 10, chaos: 12, cash: -2 },
             'Madam Aurel terkesima oleh visualisasi data dan mengesahkan aura positif pertumbuhan.'
           ],
           [
-            'Tolak mentah-mentah ritual klenik dan usir Madam Aurel keluar dari ruang server.',
+            'Tolak ritual dan usir Madam Aurel dari ruang server.',
             { team: 14, trust: -16, chaos: -10, cash: 0 },
             'Tim developer bersorak gembira, tapi komisaris mengancam membekukan operasional.'
           ]
         ]
       },
       {
-        body: 'Pantry yang dingin kini bercampur aroma dupa. Mira meminta keputusan cepat agar anggaran server tidak diblokir.',
-        dialogue: 'Jangan main logika di depan komisaris. Ruang server ini butuh restu kosmik sebelum kas dicairkan.',
+        body: 'Mira minta keputusan cepat agar anggaran server tidak diblokir.',
+        dialogue: 'Jangan main logika di depan komisaris. Server butuh restu kosmik!',
         options: [
           [
-            'Ikuti ritual penuh: mandikan rak server dengan air kembang dan pasang dupa fengshui.',
+            'Ikuti ritual: siram server dengan air kembang dan pasang dupa.',
             { trust: 14, team: -8, chaos: 22, cash: -4 },
             'Komisaris kagum pada kepatuhanmu dan membuka akses rekening, meski engineering histeris.'
           ],
           [
-            'Tukar dupa dengan vape rasa berries dan sebut grafik analitik sebagai ramalan data modern.',
+            'Ganti dupa dengan vape, lalu sebut analitik ramalan modern.',
             { insight: 12, trust: 10, chaos: 12, cash: -2 },
             'Madam Aurel terkesima oleh visualisasi data dan mengesahkan aura positif pertumbuhan.'
           ],
           [
-            'Tolak mentah-mentah ritual klenik dan usir Madam Aurel keluar dari ruang server.',
+            'Tolak ritual dan usir Madam Aurel dari ruang server.',
             { team: 14, trust: -16, chaos: -10, cash: 0 },
             'Tim developer bersorak gembira, tapi komisaris mengancam membekukan operasional.'
           ]
@@ -188,66 +188,66 @@ const weeks = [
     speaker: 'Mira · Finance Director',
     sprite: 'finance-angry',
     background: 'campaign-office',
-    intro: 'Mira mendapati bank di São Paulo menolak pembekuan rekening secara remote. Jika tidak diverifikasi langsung di lokasi, denda $30.000 akan ditarik paksa. Mira baru saja membelikan tiket pesawat kelas ekonomi 36 jam dengan tiga kali transit untukmu berangkat malam ini.',
+    intro: 'Bank São Paulo menolak membekukan rekening dari jauh. Tanpa verifikasi langsung, denda $30.000 ditarik. Mira memesankan penerbangan ekonomi 36 jam malam ini.',
     variants: [
       {
-        body: 'Dana darurat cair, dan Mira langsung menyodorkan e-ticket promo maskapai tanpa bagasi di mejamu.',
-        dialogue: 'Tiketmu sudah kubeli, berangkat malam ini! Transit Malaysia, Qatar, lanjut Ethiopia. Siapkan strategimu sebelum naik pesawat!',
+        body: 'Dana darurat cair; Mira menyodorkan tiket promo tanpa bagasi.',
+        dialogue: 'Tiketnya sudah kubeli! Transit Malaysia, Qatar, Ethiopia. Siapkan strategi!',
         options: [
           [
-            'Terima tiket ekonomi itu dan kemas seluruh berkas audit serta draf deck bilingual untuk digarap di pesawat.',
+            'Terima tiket ekonomi; siapkan audit dan deck bilingual di pesawat.',
             { insight: 14, chaos: 14, cash: -6, team: 4 },
             'Kamu memasukkan laptop dan setumpuk dokumen audit ke ransel kabin, siap merumuskan strategi sepanjang 36 jam perjalanan.'
           ],
           [
-            'Minta tim riset jadwalkan pertemuan kilat dengan manajer VC Afrika-Latam di lounge bandara transit.',
+            'Jadwalkan pitching ke investor Afrika-Latam saat transit.',
             { trust: 12, insight: 12, cash: -8, chaos: 10 },
             'Agenda rahasia tersusun: jeda transit di bandara nanti akan kamu manfaatkan untuk pitching ke investor lintas benua.'
           ],
           [
-            'Diam-diam gesek kartu kredit operasional kantor untuk upgrade tiket ke Business Class sebelum ke bandara.',
+            'Diam-diam upgrade ke Business Class pakai kartu kantor.',
             { cash: -18, team: -8, trust: -6, chaos: 5 },
             'Tiketmu resmi berubah jadi kursi rebahan mewah, namun notifikasi SMS banking langsung membunyikan HP Mira.'
           ]
         ]
       },
       {
-        body: 'Berbekal restu dupa modern, kamu bersiap menelusuri sumber kebocoran dana di belahan bumi lain.',
-        dialogue: 'Cuma ada tiket promo ekonomi 36 jam. Jangan banyak komplain, siapkan amunisimu sebelum terbang ke Brazil!',
+        body: 'Berbekal restu dupa modern, kamu siap menelusuri dana yang bocor.',
+        dialogue: 'Hanya ada tiket ekonomi 36 jam. Siapkan diri sebelum terbang!',
         options: [
           [
-            'Terima tiket ekonomi itu dan kemas seluruh berkas audit serta draf deck bilingual untuk digarap di pesawat.',
+            'Terima tiket ekonomi; siapkan audit dan deck bilingual di pesawat.',
             { insight: 14, chaos: 14, cash: -6, team: 4 },
             'Kamu memasukkan laptop dan setumpuk dokumen audit ke ransel kabin, siap merumuskan strategi sepanjang 36 jam perjalanan.'
           ],
           [
-            'Minta tim riset jadwalkan pertemuan kilat dengan manajer VC Afrika-Latam di lounge bandara transit.',
+            'Jadwalkan pitching ke investor Afrika-Latam saat transit.',
             { trust: 12, insight: 12, cash: -8, chaos: 10 },
             'Agenda rahasia tersusun: jeda transit di bandara nanti akan kamu manfaatkan untuk pitching ke investor lintas benua.'
           ],
           [
-            'Diam-diam gesek kartu kredit operasional kantor untuk upgrade tiket ke Business Class sebelum ke bandara.',
+            'Diam-diam upgrade ke Business Class pakai kartu kantor.',
             { cash: -18, team: -8, trust: -6, chaos: 5 },
             'Tiketmu resmi berubah jadi kursi rebahan mewah, namun notifikasi SMS banking langsung membunyikan HP Mira.'
           ]
         ]
       },
       {
-        body: 'Hubungan dengan komisaris tegang, sehingga kamu harus membuktikan hasil nyata langsung dari cabang Brazil.',
-        dialogue: 'Kalau kamu pulang dari Brazil dengan tangan kosong, BoD bakal langsung memecat kita berdua. Apa persiapanmu sebelum ke bandara?',
+        body: 'Hubungan dengan komisaris tegang; kamu harus membuktikan hasil di Brazil.',
+        dialogue: 'Pulang tanpa hasil, BoD pecat kita berdua. Apa persiapanmu?',
         options: [
           [
-            'Terima tiket ekonomi itu dan kemas seluruh berkas audit serta draf deck bilingual untuk digarap di pesawat.',
+            'Terima tiket ekonomi; siapkan audit dan deck bilingual di pesawat.',
             { insight: 14, chaos: 14, cash: -6, team: 4 },
             'Kamu memasukkan laptop dan setumpuk dokumen audit ke ransel kabin, siap merumuskan strategi sepanjang 36 jam perjalanan.'
           ],
           [
-            'Minta tim riset jadwalkan pertemuan kilat dengan manajer VC Afrika-Latam di lounge bandara transit.',
+            'Jadwalkan pitching ke investor Afrika-Latam saat transit.',
             { trust: 12, insight: 12, cash: -8, chaos: 10 },
             'Agenda rahasia tersusun: jeda transit di bandara nanti akan kamu manfaatkan untuk pitching ke investor lintas benua.'
           ],
           [
-            'Diam-diam gesek kartu kredit operasional kantor untuk upgrade tiket ke Business Class sebelum ke bandara.',
+            'Diam-diam upgrade ke Business Class pakai kartu kantor.',
             { cash: -18, team: -8, trust: -6, chaos: 5 },
             'Tiketmu resmi berubah jadi kursi rebahan mewah, namun notifikasi SMS banking langsung membunyikan HP Mira.'
           ]
@@ -262,66 +262,66 @@ const weeks = [
     speaker: 'Thiago · Head of Brazil',
     sprite: 'thiago',
     background: 'brazil-favela',
-    intro: 'Alamat kantor cabang Brazil ternyata sebuah warung açaí di pinggiran favela São Paulo. Thiago menyambutmu dengan celana pantai dan es kelapa. Di belakang ruko, ada 15 programmer lokal yang merangkap penari capoeira dan peternak ayam digital.',
+    intro: 'Cabang Brazil ternyata warung açaí di favela São Paulo. Di belakangnya, 15 programmer juga menari capoeira dan beternak ayam digital.',
     variants: [
       {
-        body: 'Setelah 36 jam menggarap draf deck bilingual di kursi pesawat ekonomi, kamu melangkah masuk ke markas absurd Thiago di bawah terik matahari Brazil.',
-        dialogue: 'Ola amigo CMO! Santai dulu, minum açaí. Kita memang nggak jualan kursus kaku, tapi platform capoeira & ayam blockchain kita punya margin 400%!',
+        body: 'Setelah 36 jam menggarap deck di kelas ekonomi, kamu tiba di markas Thiago.',
+        dialogue: 'Amigo! Platform capoeira dan ayam blockchain kami punya margin 400%!',
         options: [
           [
-            'Bentuk aliansi total: jadikan tim favela Thiago sebagai sayap rahasia dev murah dan pasar Latam.',
+            'Bentuk aliansi: pakai tim Thiago untuk pengembangan dan pasar Latam.',
             { cash: 18, insight: 16, chaos: 20, team: 8 },
             'Thiago bersorak! Tim Brazil resmi menjadi mesin teknologi rahasia Ruang Tumbuh dengan biaya hemat.'
           ],
           [
-            'Paksa sita semua kas tunai di brankas Thiago dan tutup operasional cabang secara permanen.',
+            'Sita kas Thiago dan tutup cabang Brazil permanen.',
             { cash: 15, trust: -10, chaos: -8, team: -6 },
             'Kamu membawa pulang dollar tunai, namun memutus potensi pertumbuhan luar negeri.'
           ],
           [
-            'Eksploitasi merchandise açaí dan IP ayam aduan digital Thiago untuk dijual ke pasar Jakarta.',
+            'Jual merchandise açaí dan ayam digital Thiago di Jakarta.',
             { cash: 10, chaos: 16, trust: 4, insight: 8 },
             'Merchandise açaí viral di kafe-kafe hipster Jakarta dan memberi suntikan pendapatan segar.'
           ]
         ]
       },
       {
-        body: 'Manajer VC yang kamu temui di lounge bandara transit Ethiopia bahkan sudah menelepon Thiago untuk memuji terobosannya.',
-        dialogue: 'Bisnis di favela itu soal respek dan kreativitas. Bantu gue kembangkan ini, atau uangnya balik ke Jakarta.',
+        body: 'Investor yang kamu temui saat transit sudah menelepon Thiago.',
+        dialogue: 'Bisnis favela soal respek. Bantu kembangkan, atau uang kembali ke Jakarta.',
         options: [
           [
-            'Bentuk aliansi total: jadikan tim favela Thiago sebagai sayap rahasia dev murah dan pasar Latam.',
+            'Bentuk aliansi: pakai tim Thiago untuk pengembangan dan pasar Latam.',
             { cash: 18, insight: 16, chaos: 20, team: 8 },
             'Thiago bersorak! Tim Brazil resmi menjadi mesin teknologi rahasia Ruang Tumbuh dengan biaya hemat.'
           ],
           [
-            'Paksa sita semua kas tunai di brankas Thiago dan tutup operasional cabang secara permanen.',
+            'Sita kas Thiago dan tutup cabang Brazil permanen.',
             { cash: 15, trust: -10, chaos: -8, team: -6 },
             'Kamu membawa pulang dollar tunai, namun memutus potensi pertumbuhan luar negeri.'
           ],
           [
-            'Eksploitasi merchandise açaí dan IP ayam aduan digital Thiago untuk dijual ke pasar Jakarta.',
+            'Jual merchandise açaí dan ayam digital Thiago di Jakarta.',
             { cash: 10, chaos: 16, trust: 4, insight: 8 },
             'Merchandise açaí viral di kafe-kafe hipster Jakarta dan memberi suntikan pendapatan segar.'
           ]
         ]
       },
       {
-        body: 'Mendarat segar bugar berkat kursi Business Class, kamu menyambangi ruko Thiago sementara ponselmu penuh 27 pesan kemarahan Mira.',
-        dialogue: 'Amigo, daripada pusing mikirin corporate overhead, gabungin kekuatan dev kita!',
+        body: 'Kamu tiba segar dari Business Class, disambut 27 pesan marah Mira.',
+        dialogue: 'Amigo, gabungkan saja kekuatan developer kita!',
         options: [
           [
-            'Bentuk aliansi total: jadikan tim favela Thiago sebagai sayap rahasia dev murah dan pasar Latam.',
+            'Bentuk aliansi: pakai tim Thiago untuk pengembangan dan pasar Latam.',
             { cash: 18, insight: 16, chaos: 20, team: 8 },
             'Thiago bersorak! Tim Brazil resmi menjadi mesin teknologi rahasia Ruang Tumbuh dengan biaya hemat.'
           ],
           [
-            'Paksa sita semua kas tunai di brankas Thiago dan tutup operasional cabang secara permanen.',
+            'Sita kas Thiago dan tutup cabang Brazil permanen.',
             { cash: 15, trust: -10, chaos: -8, team: -6 },
             'Kamu membawa pulang dollar tunai, namun memutus potensi pertumbuhan luar negeri.'
           ],
           [
-            'Eksploitasi merchandise açaí dan IP ayam aduan digital Thiago untuk dijual ke pasar Jakarta.',
+            'Jual merchandise açaí dan ayam digital Thiago di Jakarta.',
             { cash: 10, chaos: 16, trust: 4, insight: 8 },
             'Merchandise açaí viral di kafe-kafe hipster Jakarta dan memberi suntikan pendapatan segar.'
           ]
@@ -336,66 +336,66 @@ const weeks = [
     speaker: 'Sarah · CS Lead',
     sprite: 'success-angry',
     background: 'office',
-    intro: 'Tiba kembali di Jakarta, lobi kantor Ruang Tumbuh sudah diduduki 75 emak-emak affiliate bersenjata panci presto dan mikrofon karaoke. Mereka murka karena pencairan komisi tertunda 2 jam akibat perbedaan waktu Brazil.',
+    intro: 'Setiba di Jakarta, 75 emak-emak affiliate menduduki lobi dengan panci dan mikrofon. Mereka marah karena komisi terlambat dua jam akibat selisih waktu Brazil.',
     variants: [
       {
-        body: 'Kabar aliansi Brazil belum sempat diumumkan saat suara dangdut koplo menggelegar dari speaker lobi kantor.',
-        dialogue: 'CMO tolong! Mereka mendirikan tenda, membakar sate di parkiran, dan mengancam memboikot grup WA arisan keluarga se-Nusantara!',
+        body: 'Aliansi Brazil belum diumumkan; dangdut sudah menggema di lobi.',
+        dialogue: 'Mereka pasang tenda, bakar sate, dan ancam boikot grup arisan!',
         options: [
           [
-            'Naik ke atas meja, ambil mic, dan rekrut mereka jadi pasukan buzzer siber penyerang kompetitor.',
+            'Ambil mic dan rekrut mereka jadi buzzer kompetitor.',
             { trust: 16, chaos: 24, team: 8, cash: -4 },
             'Emak-emak histeris gembira! Mereka resmi bertransformasi menjadi divisi perang siber paling militan.'
           ],
           [
-            'Bagikan voucher minyak goreng premium dan paket sembako gratis dari sisa kas darurat.',
+            'Bagikan voucher minyak goreng dan sembako dari kas darurat.',
             { cash: -12, trust: 12, team: 4, chaos: -8 },
             'Emak-emak bubar dengan tertib dan damai, tapi anggaran belanja sembako membuat dompet tipis.'
           ],
           [
-            'Kabur lewat pintu darurat bersama Damar dan biarkan Bagas dari tim Product bernegosiasi.',
+            'Kabur bersama Damar; biarkan Bagas bernegosiasi.',
             { team: -16, trust: -12, chaos: 14, cash: 2 },
             'Bagas disandera emak-emak selama 8 jam untuk mengajari mereka bikin transisi video TikTok.'
           ]
         ]
       },
       {
-        body: 'Uang tunai dari Brazil berhasil meredakan emosi sementara, namun ketua rombongan emak-emak meminta kepastian komisi.',
-        dialogue: 'Kalau hari ini komisi nggak cair dobel, kita bakal live TikTok di depan kantor sambil nangis-nangis!',
+        body: 'Uang Brazil meredakan situasi, tapi ketua massa menuntut kepastian komisi.',
+        dialogue: 'Komisi harus cair dobel hari ini, atau kami live TikTok sambil nangis!',
         options: [
           [
-            'Naik ke atas meja, ambil mic, dan rekrut mereka jadi pasukan buzzer siber penyerang kompetitor.',
+            'Ambil mic dan rekrut mereka jadi buzzer kompetitor.',
             { trust: 16, chaos: 24, team: 8, cash: -4 },
             'Emak-emak histeris gembira! Mereka resmi bertransformasi menjadi divisi perang siber paling militan.'
           ],
           [
-            'Bagikan voucher minyak goreng premium dan paket sembako gratis dari sisa kas darurat.',
+            'Bagikan voucher minyak goreng dan sembako dari kas darurat.',
             { cash: -12, trust: 12, team: 4, chaos: -8 },
             'Emak-emak bubar dengan tertib dan damai, tapi anggaran belanja sembako membuat dompet tipis.'
           ],
           [
-            'Kabur lewat pintu darurat bersama Damar dan biarkan Bagas dari tim Product bernegosiasi.',
+            'Kabur bersama Damar; biarkan Bagas bernegosiasi.',
             { team: -16, trust: -12, chaos: 14, cash: 2 },
             'Bagas disandera emak-emak selama 8 jam untuk mengajari mereka bikin transisi video TikTok.'
           ]
         ]
       },
       {
-        body: 'Kehebohan di lobi mulai diliput akun gosip lokal. Kamu harus memilih manuver tercepat untuk meredam kekacauan.',
-        dialogue: 'Jangan biarkan mereka merekam wajah Damar! Pikirkan solusi sebelum polisi pamong praja datang!',
+        body: 'Akun gosip mulai meliput keributan di lobi.',
+        dialogue: 'Jangan sampai wajah Damar direkam! Cari solusi sebelum Satpol PP datang!',
         options: [
           [
-            'Naik ke atas meja, ambil mic, dan rekrut mereka jadi pasukan buzzer siber penyerang kompetitor.',
+            'Ambil mic dan rekrut mereka jadi buzzer kompetitor.',
             { trust: 16, chaos: 24, team: 8, cash: -4 },
             'Emak-emak histeris gembira! Mereka resmi bertransformasi menjadi divisi perang siber paling militan.'
           ],
           [
-            'Bagikan voucher minyak goreng premium dan paket sembako gratis dari sisa kas darurat.',
+            'Bagikan voucher minyak goreng dan sembako dari kas darurat.',
             { cash: -12, trust: 12, team: 4, chaos: -8 },
             'Emak-emak bubar dengan tertib dan damai, tapi anggaran belanja sembako membuat dompet tipis.'
           ],
           [
-            'Kabur lewat pintu darurat bersama Damar dan biarkan Bagas dari tim Product bernegosiasi.',
+            'Kabur bersama Damar; biarkan Bagas bernegosiasi.',
             { team: -16, trust: -12, chaos: 14, cash: 2 },
             'Bagas disandera emak-emak selama 8 jam untuk mengajari mereka bikin transisi video TikTok.'
           ]
@@ -410,66 +410,66 @@ const weeks = [
     speaker: 'Kevin · Anak Magang',
     sprite: 'kevin',
     background: 'tech-expo-stage',
-    intro: 'CakapKilat menggelar peluncuran akbar di Indonesia Tech Expo ICE BSD. Aldi dijadwalkan berpidato di hadapan 2.000 investor global. Kamu tidak punya tiket VIP, tapi Kevin membawa dua rompi proyek oranye dan tangga lipat aluminium.',
+    intro: 'Aldi akan meluncurkan produk CakapKilat di Tech Expo ICE BSD di depan 2.000 investor. Tanpa tiket VIP, kamu hanya punya rompi proyek dan tangga Kevin.',
     variants: [
       {
-        body: 'Armada emak-emak affiliate sudah siap siaga di medsos menunggu komando dari ruang expo.',
-        dialogue: 'Bang, kalau kita pakai rompi oranye sambil nenteng tangga lipat, satpam ICE BSD nggak bakal berani nanya tiket. Backstage aman!',
+        body: 'Pasukan affiliate siap menunggu komando dari media sosial.',
+        dialogue: 'Pakai rompi dan bawa tangga, satpam pasti biarkan kita ke belakang panggung!',
         options: [
           [
-            'Susup ke control room dan putar rekaman sadapan Aldi Senopati di layar proyektor raksasa.',
+            'Susup ke control room dan putar rekaman Aldi di layar besar.',
             { insight: 18, chaos: 26, trust: 6, cash: -3 },
             'Di layar 4K, suara Aldi menghina investornya terdengar jelas! Reputasi CakapKilat hancur berkeping-keping.'
           ],
           [
-            'Bajak mikrofon panggung utama saat lampu padam dan orasikan keunggulan Ruang Tumbuh.',
+            'Bajak mic saat lampu padam dan promosikan Ruang Tumbuh.',
             { trust: -8, chaos: 30, insight: 10, cash: 8 },
             'Aksi nekatmu viral seketika di internet; ribuan pengguna baru mendaftar meski kamu dikejar panitia.'
           ],
           [
-            'Buka booth gerilya di samping toilet VIP expo dengan banner kain manual.',
+            'Buka booth gerilya di dekat toilet VIP.',
             { trust: 10, cash: -4, team: 6, insight: 8 },
             'Pendekatan gerilya elegan; kamu berhasil mencegat tiga investor institusi yang sedang antre ke toilet.'
           ]
         ]
       },
       {
-        body: 'Kevin sudah memetakan jalur kabel audio panggung utama dari bawah panggung expo.',
-        dialogue: 'Pilih taktikmu, Bang. Mau kita hancurkan mereka di panggung atau kita rampas panggungnya?',
+        body: 'Kevin sudah memetakan kabel audio panggung.',
+        dialogue: 'Mau hancurkan presentasi mereka atau rebut panggungnya?',
         options: [
           [
-            'Susup ke control room dan putar rekaman sadapan Aldi Senopati di layar proyektor raksasa.',
+            'Susup ke control room dan putar rekaman Aldi di layar besar.',
             { insight: 18, chaos: 26, trust: 6, cash: -3 },
             'Di layar 4K, suara Aldi menghina investornya terdengar jelas! Reputasi CakapKilat hancur berkeping-keping.'
           ],
           [
-            'Bajak mikrofon panggung utama saat lampu padam dan orasikan keunggulan Ruang Tumbuh.',
+            'Bajak mic saat lampu padam dan promosikan Ruang Tumbuh.',
             { trust: -8, chaos: 30, insight: 10, cash: 8 },
             'Aksi nekatmu viral seketika di internet; ribuan pengguna baru mendaftar meski kamu dikejar panitia.'
           ],
           [
-            'Buka booth gerilya di samping toilet VIP expo dengan banner kain manual.',
+            'Buka booth gerilya di dekat toilet VIP.',
             { trust: 10, cash: -4, team: 6, insight: 8 },
             'Pendekatan gerilya elegan; kamu berhasil mencegat tiga investor institusi yang sedang antre ke toilet.'
           ]
         ]
       },
       {
-        body: 'Bagas yang baru bebas dari sandera emak-emak ikut membantu memegang tangga proyek.',
-        dialogue: 'Jangan sampai ketangkap polisi expo ya. Kita butuh momentum ini buat membalikkan keadaan.',
+        body: 'Bagas, yang lolos dari emak-emak, membantu membawa tangga.',
+        dialogue: 'Jangan sampai ditangkap satpam expo. Ini kesempatan kita!',
         options: [
           [
-            'Susup ke control room dan putar rekaman sadapan Aldi Senopati di layar proyektor raksasa.',
+            'Susup ke control room dan putar rekaman Aldi di layar besar.',
             { insight: 18, chaos: 26, trust: 6, cash: -3 },
             'Di layar 4K, suara Aldi menghina investornya terdengar jelas! Reputasi CakapKilat hancur berkeping-keping.'
           ],
           [
-            'Bajak mikrofon panggung utama saat lampu padam dan orasikan keunggulan Ruang Tumbuh.',
+            'Bajak mic saat lampu padam dan promosikan Ruang Tumbuh.',
             { trust: -8, chaos: 30, insight: 10, cash: 8 },
             'Aksi nekatmu viral seketika di internet; ribuan pengguna baru mendaftar meski kamu dikejar panitia.'
           ],
           [
-            'Buka booth gerilya di samping toilet VIP expo dengan banner kain manual.',
+            'Buka booth gerilya di dekat toilet VIP.',
             { trust: 10, cash: -4, team: 6, insight: 8 },
             'Pendekatan gerilya elegan; kamu berhasil mencegat tiga investor institusi yang sedang antre ke toilet.'
           ]
@@ -484,66 +484,66 @@ const weeks = [
     speaker: 'Rani · Sales Lead',
     sprite: 'sales-angry',
     background: 'night',
-    intro: 'Kekacauan di expo memicu serangan balasan. Akun gosip anonim @StartupSengsara di Twitter membocorkan rekaman internal Ruang Tumbuh dan memicu trending topic #BoikotRuangTumbuh. War room malam hari berlangsung tegang.',
+    intro: 'Setelah expo, @StartupSengsara membocorkan rekaman internal. #BoikotRuangTumbuh trending; war room malam ini memanas.',
     variants: [
       {
-        body: 'Skandal Senopati dan expo meledak di lini masa. Rani memperlihatkan layar dashboard dengan notifikasi cancel beruntun.',
-        dialogue: 'Trending nomor satu di X/Twitter! Klien korporat menelepon tiap 30 detik! Kita harus counter-attack sebelum bursa saham buka besok pagi!',
+        body: 'Skandal Senopati dan expo viral. Dashboard Rani penuh pembatalan.',
+        dialogue: 'Trending nomor satu! Klien menelepon terus. Kita harus balas sebelum pagi!',
         options: [
           [
-            'Kerahkan armada 75 emak-emak affiliate untuk membajak algoritma dengan testimoni haru.',
+            'Kerahkan 75 affiliate untuk meramaikan testimoni haru.',
             { trust: 18, team: 10, chaos: 16, cash: -4 },
             'Emak-emak mengunggah jutaan video memasak sambil belajar bisnis hingga tagar boikot tenggelam total.'
           ],
           [
-            'Rilis video klarifikasi Damar berbaju hitam polos di depan tembok semen tanpa filter.',
+            'Rilis video klarifikasi Damar di depan tembok semen.',
             { trust: 8, team: -6, chaos: -8, cash: -2 },
             'Video ditonton 5 juta kali; netizen luluh melihat ekspresi melas Damar meski ia jadi stiker WhatsApp.'
           ],
           [
-            'Goreng balik situasi: umumkan seluruh keributan adalah Social Experiment peluncuran fitur baru.',
+            'Klaim keributan ini eksperimen sosial peluncuran fitur.',
             { chaos: 28, trust: -10, insight: 8, cash: 10 },
             'Netizen geram tapi penasaran; server web sempat down dihantam lonjakan traffic 600%.'
           ]
         ]
       },
       {
-        body: 'Komentar warganet makin liar mengaitkan Ruang Tumbuh dengan kultus ruwat server dan ayam Brazil.',
-        dialogue: 'Pilih narasi kita sekarang! Kita mau main aman, main air mata, atau bakar panggung sekalian?',
+        body: 'Warganet mengaitkan perusahaan dengan ritual server dan ayam Brazil.',
+        dialogue: 'Pilih narasi: main aman, cari simpati, atau bakar panggung?',
         options: [
           [
-            'Kerahkan armada 75 emak-emak affiliate untuk membajak algoritma dengan testimoni haru.',
+            'Kerahkan 75 affiliate untuk meramaikan testimoni haru.',
             { trust: 18, team: 10, chaos: 16, cash: -4 },
             'Emak-emak mengunggah jutaan video memasak sambil belajar bisnis hingga tagar boikot tenggelam total.'
           ],
           [
-            'Rilis video klarifikasi Damar berbaju hitam polos di depan tembok semen tanpa filter.',
+            'Rilis video klarifikasi Damar di depan tembok semen.',
             { trust: 8, team: -6, chaos: -8, cash: -2 },
             'Video ditonton 5 juta kali; netizen luluh melihat ekspresi melas Damar meski ia jadi stiker WhatsApp.'
           ],
           [
-            'Goreng balik situasi: umumkan seluruh keributan adalah Social Experiment peluncuran fitur baru.',
+            'Klaim keributan ini eksperimen sosial peluncuran fitur.',
             { chaos: 28, trust: -10, insight: 8, cash: 10 },
             'Netizen geram tapi penasaran; server web sempat down dihantam lonjakan traffic 600%.'
           ]
         ]
       },
       {
-        body: 'Mira menghitung potensi kerugian jika kampanye cancel culture ini terus bertahan hingga akhir pekan.',
-        dialogue: 'Satu langkah keliru malam ini, perusahaan selesai sebelum minggu kesembilan.',
+        body: 'Mira menghitung kerugian jika boikot bertahan sampai akhir pekan.',
+        dialogue: 'Salah langkah malam ini, perusahaan tamat sebelum minggu depan.',
         options: [
           [
-            'Kerahkan armada 75 emak-emak affiliate untuk membajak algoritma dengan testimoni haru.',
+            'Kerahkan 75 affiliate untuk meramaikan testimoni haru.',
             { trust: 18, team: 10, chaos: 16, cash: -4 },
             'Emak-emak mengunggah jutaan video memasak sambil belajar bisnis hingga tagar boikot tenggelam total.'
           ],
           [
-            'Rilis video klarifikasi Damar berbaju hitam polos di depan tembok semen tanpa filter.',
+            'Rilis video klarifikasi Damar di depan tembok semen.',
             { trust: 8, team: -6, chaos: -8, cash: -2 },
             'Video ditonton 5 juta kali; netizen luluh melihat ekspresi melas Damar meski ia jadi stiker WhatsApp.'
           ],
           [
-            'Goreng balik situasi: umumkan seluruh keributan adalah Social Experiment peluncuran fitur baru.',
+            'Klaim keributan ini eksperimen sosial peluncuran fitur.',
             { chaos: 28, trust: -10, insight: 8, cash: 10 },
             'Netizen geram tapi penasaran; server web sempat down dihantam lonjakan traffic 600%.'
           ]
@@ -558,66 +558,66 @@ const weeks = [
     speaker: 'Bima · Investor',
     sprite: 'investor',
     background: 'penthouse-lounge',
-    intro: 'Hari kerja ke-45. Bima mengundangmu dan Damar ke private lounge tertutup lantai 40 gedung pencakar langit Jakarta. Di atas meja kaca, ia meletakkan selembar cek kosong dan selembar tiket one-way ke Rio de Janeiro.',
+    intro: 'Menjelang tenggat, Bima mengundangmu dan Damar ke lounge lantai 40. Di meja ada cek kosong dan tiket sekali jalan ke Rio.',
     variants: [
       {
-        body: 'Setelah lolos dari amukan perang media, Bima menatapmu tajam sambil mengisap cerutu mahal.',
-        dialogue: 'Kalian gila. Tapi dalam bisnis, kegilaan yang terukur itu mahal. Pilih: ambil cek ini tapi serahkan 51% kendali ke gue, atau buktikan kartu as kalian.',
+        body: 'Bima menatapmu tajam sambil mengisap cerutu.',
+        dialogue: 'Kegilaan terukur itu mahal. Ambil cek untuk 51% kendali, atau buktikan kartu as kalian.',
         options: [
           [
-            'Tolak cek Bima! Tunjukkan sinergi data rahasia Senopati, dev favela Brazil, dan tentara emak-emak.',
+            'Tolak cek; tunjukkan sinergi intel Senopati, tim Brazil, dan affiliate.',
             { trust: 20, insight: 16, chaos: 15, cash: 10 },
             'Bima terperangah melihat ekosistem organik buatanmu yang mandiri dan menolak diperbudak modal.'
           ],
           [
-            'Ambil cek kosong Bima dan tandatangani surat penyerahan 51% saham mayoritas perusahaan.',
+            'Ambil cek dan serahkan 51% saham ke Bima.',
             { cash: 40, trust: -16, team: -12, chaos: -10 },
             'Rekening perusahaan langsung terisi ratusan miliar, namun otonomi tim resmi musnah.'
           ],
           [
-            'Tantang Bima adu tebak metrik churn rate: yang kalah harus menanggung biaya operasional kantor.',
+            'Tantang Bima tebak churn rate; yang kalah bayar operasional.',
             { chaos: 22, insight: 12, team: 8, cash: 6 },
             'Bima tertawa lepas menyukai nyalimu dan menyetujui dana talangan tanpa campur tangan dewan.'
           ]
         ]
       },
       {
-        body: 'Bima menyandarkan punggungnya di sofa kulit sambil menatap pemandangan lampu kota Jakarta.',
-        dialogue: 'Banyak founder jago bikin deck, tapi sedikit yang berani main di lumpur kayak lo. Apa tawaran pamungkasmu?',
+        body: 'Bima bersandar sambil memandang lampu Jakarta.',
+        dialogue: 'Banyak yang jago bikin deck, sedikit yang berani kotor. Apa tawaranmu?',
         options: [
           [
-            'Tolak cek Bima! Tunjukkan sinergi data rahasia Senopati, dev favela Brazil, dan tentara emak-emak.',
+            'Tolak cek; tunjukkan sinergi intel Senopati, tim Brazil, dan affiliate.',
             { trust: 20, insight: 16, chaos: 15, cash: 10 },
             'Bima terperangah melihat ekosistem organik buatanmu yang mandiri dan menolak diperbudak modal.'
           ],
           [
-            'Ambil cek kosong Bima dan tandatangani surat penyerahan 51% saham mayoritas perusahaan.',
+            'Ambil cek dan serahkan 51% saham ke Bima.',
             { cash: 40, trust: -16, team: -12, chaos: -10 },
             'Rekening perusahaan langsung terisi ratusan miliar, namun otonomi tim resmi musnah.'
           ],
           [
-            'Tantang Bima adu tebak metrik churn rate: yang kalah harus menanggung biaya operasional kantor.',
+            'Tantang Bima tebak churn rate; yang kalah bayar operasional.',
             { chaos: 22, insight: 12, team: 8, cash: 6 },
             'Bima tertawa lepas menyukai nyalimu dan menyetujui dana talangan tanpa campur tangan dewan.'
           ]
         ]
       },
       {
-        body: 'Damar duduk gemetar di sampingmu melihat angka nol di atas cek yang disiapkan Bima.',
-        dialogue: 'Waktu kalian tinggal 5 hari kerja. Keputusan di meja ini menentukan masa depan kalian.',
+        body: 'Damar gemetar melihat deretan nol pada cek Bima.',
+        dialogue: 'Waktu tinggal sedikit. Keputusan ini menentukan masa depan kalian.',
         options: [
           [
-            'Tolak cek Bima! Tunjukkan sinergi data rahasia Senopati, dev favela Brazil, dan tentara emak-emak.',
+            'Tolak cek; tunjukkan sinergi intel Senopati, tim Brazil, dan affiliate.',
             { trust: 20, insight: 16, chaos: 15, cash: 10 },
             'Bima terperangah melihat ekosistem organik buatanmu yang mandiri dan menolak diperbudak modal.'
           ],
           [
-            'Ambil cek kosong Bima dan tandatangani surat penyerahan 51% saham mayoritas perusahaan.',
+            'Ambil cek dan serahkan 51% saham ke Bima.',
             { cash: 40, trust: -16, team: -12, chaos: -10 },
             'Rekening perusahaan langsung terisi ratusan miliar, namun otonomi tim resmi musnah.'
           ],
           [
-            'Tantang Bima adu tebak metrik churn rate: yang kalah harus menanggung biaya operasional kantor.',
+            'Tantang Bima tebak churn rate; yang kalah bayar operasional.',
             { chaos: 22, insight: 12, team: 8, cash: 6 },
             'Bima tertawa lepas menyukai nyalimu dan menyetujui dana talangan tanpa campur tangan dewan.'
           ]
@@ -632,66 +632,66 @@ const weeks = [
     speaker: 'Damar · CEO',
     sprite: 'founder',
     background: 'boardroom',
-    intro: 'Hari ke-60. Kamu kembali ke ruang rapat direksi lantai 12 tempat semua bermula. Seluruh jajaran hadir: Mira, Bagas, Sarah, Rani, Naya, Kevin, Madam Aurel, Bima, hingga layar video call dari cabang São Paulo. Waktu evaluasi telah habis.',
+    intro: 'Hari ke-60. Direksi dan tim berkumpul di ruang rapat, bersama cabang São Paulo lewat video. Waktu evaluasi habis.',
     variants: [
       {
-        body: 'Palu sidang direksi diletakkan di tengah meja. Semua mata tertuju pada layar presentasi akhirmu.',
-        dialogue: 'Enam puluh hari yang luar biasa kacau, tapi kita berhasil sampai di sini. Sampaikan rekomendasi pamungkasmu ke Dewan Direksi.',
+        body: 'Palu sidang di meja; semua mata tertuju pada presentasimu.',
+        dialogue: 'Enam puluh hari yang kacau. Apa rekomendasi terakhirmu?',
         options: [
           [
-            'Paparkan portofolio ekosistem terpadu: efisiensi dev Brazil, armada komunitas, dan dominasi pasar.',
+            'Paparkan sinergi tim Brazil, komunitas, dan peluang pasar.',
             { trust: 15, insight: 12, cash: 5, chaos: 10 },
             'Seluruh ruang rapat tertegun menyimak arsitektur pertumbuhan terhebat yang pernah dipresentasikan.'
           ],
           [
-            'Tekankan kepastian kas jangka pendek dan ajukan opsi merger dengan holding korporasi besar.',
+            'Utamakan kas jangka pendek dan usulkan merger.',
             { cash: 20, trust: 6, team: -10, chaos: -10 },
             'Dewan komisaris manggut-manggut menyetujui jaminan keselamatan dana para pemegang saham.'
           ],
           [
-            'Nyalakan speaker rapat, setel musik Samba Brazil Thiago kencang-kencang, dan ajak direksi menari.',
+            'Putar musik samba Thiago dan ajak direksi menari.',
             { chaos: 30, team: 15, trust: -6, cash: 0 },
             'Sidang direksi seketika berubah menjadi karnaval kegembiraan paling aneh dalam sejarah korporat.'
           ]
         ]
       },
       {
-        body: 'Komisaris membuka map berisi berkas vonis akhir nasib PT Ruang Tumbuh Indonesia.',
-        dialogue: 'Kalian sudah membawa perusahaan ini melintasi benua dan badai media. Sekarang buktikan nilainya.',
+        body: 'Komisaris membuka map vonis akhir perusahaan.',
+        dialogue: 'Kalian sudah melewati benua dan badai media. Buktikan nilainya.',
         options: [
           [
-            'Paparkan portofolio ekosistem terpadu: efisiensi dev Brazil, armada komunitas, dan dominasi pasar.',
+            'Paparkan sinergi tim Brazil, komunitas, dan peluang pasar.',
             { trust: 15, insight: 12, cash: 5, chaos: 10 },
             'Seluruh ruang rapat tertegun menyimak arsitektur pertumbuhan terhebat yang pernah dipresentasikan.'
           ],
           [
-            'Tekankan kepastian kas jangka pendek dan ajukan opsi merger dengan holding korporasi besar.',
+            'Utamakan kas jangka pendek dan usulkan merger.',
             { cash: 20, trust: 6, team: -10, chaos: -10 },
             'Dewan komisaris manggut-manggut menyetujui jaminan keselamatan dana para pemegang saham.'
           ],
           [
-            'Nyalakan speaker rapat, setel musik Samba Brazil Thiago kencang-kencang, dan ajak direksi menari.',
+            'Putar musik samba Thiago dan ajak direksi menari.',
             { chaos: 30, team: 15, trust: -6, cash: 0 },
             'Sidang direksi seketika berubah menjadi karnaval kegembiraan paling aneh dalam sejarah korporat.'
           ]
         ]
       },
       {
-        body: 'Layar proyektor ruang sidang menampilkan rekapitulasi metrik enam puluh hari terakhir di hadapan para pemegang saham.',
-        dialogue: 'Apapun hasil musyawarah hari ini, kita sudah mengubah cara bermain game bisnis ini selamanya.',
+        body: 'Layar menampilkan metrik 60 hari terakhir untuk pemegang saham.',
+        dialogue: 'Apa pun putusan hari ini, cara kita berbisnis sudah berubah.',
         options: [
           [
-            'Paparkan portofolio ekosistem terpadu: efisiensi dev Brazil, armada komunitas, dan dominasi pasar.',
+            'Paparkan sinergi tim Brazil, komunitas, dan peluang pasar.',
             { trust: 15, insight: 12, cash: 5, chaos: 10 },
             'Seluruh ruang rapat tertegun menyimak arsitektur pertumbuhan terhebat yang pernah dipresentasikan.'
           ],
           [
-            'Tekankan kepastian kas jangka pendek dan ajukan opsi merger dengan holding korporasi besar.',
+            'Utamakan kas jangka pendek dan usulkan merger.',
             { cash: 20, trust: 6, team: -10, chaos: -10 },
             'Dewan komisaris manggut-manggut menyetujui jaminan keselamatan dana para pemegang saham.'
           ],
           [
-            'Nyalakan speaker rapat, setel musik Samba Brazil Thiago kencang-kencang, dan ajak direksi menari.',
+            'Putar musik samba Thiago dan ajak direksi menari.',
             { chaos: 30, team: 15, trust: -6, cash: 0 },
             'Sidang direksi seketika berubah menjadi karnaval kegembiraan paling aneh dalam sejarah korporat.'
           ]
@@ -822,10 +822,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'GROWTH',
       background: 'office',
       dialogue: index === 0
-        ? 'Akhirnya ada yang berani bongkar funnel berdarah itu! Tim growth langsung pasang tracker baru sore ini.'
+        ? 'Akhirnya funnel itu dibongkar! Tim growth pasang tracker sore ini.'
         : index === 1
-          ? 'Buset, baru hari pertama udah ngajak perang psikologis sama CakapKilat! Siap, tim gue langsung gerak!'
-          : 'Misi rahasia ke Senopati?! Gue sama Kevin udah siapin alat sadap dan jadwal ngopi Aldi besok pagi!',
+          ? 'Hari pertama sudah perang psikologis? Siap, tim gue gerak!'
+          : 'Misi Senopati? Gue dan Kevin siapin alat sadap dan jadwal Aldi!',
       detail: 'Naya langsung mengumpulkan tim di ruang kerja seusai rapat direksi.'
     });
   } else if (week === 1) {
@@ -835,10 +835,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'KOMPETITOR',
       background: 'senopati-cafe',
       dialogue: index === 0
-        ? 'Mas barista tadi kok naruh oat milk sambil melototin layar MacBook gue ya?! Ah, perasaan gue doang kali!'
+        ? 'Barista tadi melototin layar gue? Ah, mungkin perasaan gue.'
         : index === 1
-          ? 'Apa-apaan tadi meja sebelah teleponan soal Quantum AI?! Jangan-jangan fitur kita udah keduluan Ruang Tumbuh!'
-          : 'Hah?! Kok slide rahasia gue kebuka di tengah kerumunan orang?! Siapa yang barusan foto layar gue?!',
+          ? 'Meja sebelah bicara Quantum AI? Jangan-jangan kita keduluan!'
+          : 'Slide rahasia gue terbuka? Siapa yang foto?!',
       detail: 'Aldi buru-buru menutup MacBook Pro-nya di kafe Senopati dengan wajah curiga.'
     });
   } else if (week === 2) {
@@ -848,10 +848,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'KOMISARIS',
       background: 'meeting',
       dialogue: index === 0
-        ? 'Aura kembang tujuh rupa sudah menyatu dengan algoritma kalian. Komisaris sangat senang mendengar kabar ini.'
+        ? 'Aura kembang menyatu dengan algoritma. Komisaris senang.'
         : index === 1
-          ? 'Perpaduan zodiak dan machine learning yang harmonis! Cakra konversi kalian sekarang terbuka lebar.'
-          : 'Berani-beraninya kamu mengusir saya dan menyiram dupa suci! Lihat saja, komisaris pasti mendengar kelancangan ini!',
+          ? 'Zodiak dan machine learning harmonis! Cakra konversi terbuka.'
+          : 'Berani usir saya! Komisaris pasti dengar soal ini!',
       detail: index === 2
         ? 'Madam Aurel keluar dari ruang server sambil mengibaskan selendang dan mengancam melapor ke komisaris.'
         : 'Madam Aurel meniup sisa abu dupa dan mengirim laporan positif ke komisaris.'
@@ -863,10 +863,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'FINANCE',
       background: 'campaign-office',
       dialogue: index === 2
-        ? 'HEH! Gue suruh beli tiket ekonomi transit tiga kali, kenapa tagihan kartu korporat malah bunyi upgrade Business Class?! Awas ya kalau pulang dari Brazil nggak bawa hasil!'
+        ? 'HEH! Gue beli ekonomi, kenapa tagihannya Business Class?! Pulang harus bawa hasil!'
         : index === 1
-          ? 'Oke, jadwal transit di Doha udah gue sesuaikan sama agenda VC lo. Ingat, jangan jajan aneh-aneh di bandara!'
-          : 'Paspor dan berkas audit sudah lengkap? Hati-hati di favela, jangan sampai koper dan laptop kantor dicolong orang.',
+          ? 'Jadwal transit sudah cocok dengan VC. Jangan jajan aneh-aneh!'
+          : 'Paspor dan audit lengkap? Hati-hati dengan barang kantor di favela.',
       detail: index === 2
         ? 'Mira memelototi notifikasi SMS tagihan Business Class sambil menyerahkan map paspor dengan tangan gemetar.'
         : 'Mira mengirimkan e-ticket penerbangan kelas ekonomi dan dokumen audit via WhatsApp sebelum kamu berangkat ke bandara.'
@@ -878,10 +878,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'CABANG BRAZIL',
       background: 'brazil-favela',
       dialogue: index === 1
-        ? 'Caramba... jadi cabang São Paulo beneran ditutup paksa nih? Padahal kode AI capoeira kita tinggal selangkah lagi meledak, amigo!'
+        ? 'Caramba, cabang São Paulo benar-benar ditutup? Kode AI kita hampir meledak!'
         : index === 0
-          ? 'Muito bom! Energinya gila banget! Favela dev siap tempur 24 jam penuh buat back-up server Ruang Tumbuh!'
-          : 'Hahaha! Paket bundel açaí superfood dan NFT sertifikat ini bakal bikin investor Jakarta geleng-geleng kepala, amigo!',
+          ? 'Muito bom! Tim favela siap bantu server Ruang Tumbuh!'
+          : 'Bundel açaí dan NFT ini bakal bikin investor Jakarta melongo!',
       detail: index === 1
         ? 'Thiago menyerahkan sisa kunci kantor favela dengan wajah kecewa saat kamu bersiap kembali ke bandara.'
         : 'Thiago berpose capoeira di teras favela sambil mengantar keberangkatanmu kembali ke bandara.'
@@ -893,10 +893,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'CUSTOMER SUCCESS',
       background: 'office',
       dialogue: index === 0
-        ? 'Gila... emak-emak yang tadinya bawa panci sekarang malah baris rapi bikin video serbuan ke sosmed lawan. Lu beneran pawang emak-emak!'
+        ? 'Emak-emak berpanci sekarang menyerbu medsos lawan. Lu pawang mereka!'
         : index === 1
-          ? 'Panci-panci di lobi akhirnya bubar setelah dibagiin kupon sembako, tapi kas kita lumayan terkuras hari ini.'
-          : 'Woi! Lu enak banget kabur lewat pintu darurat, itu Pak Bagas masih disandera Bu Tejo disuruh joget TikTok di lobi!',
+          ? 'Mereka bubar setelah dapat sembako, tapi kas kita terkuras.'
+          : 'Woi! Lu kabur, Bagas malah disandera dan disuruh joget TikTok!',
       detail: index === 2
         ? 'Sarah mengintip dari balik tangga darurat melihat Bagas dipaksa merekam konten transisi oleh barisan emak-emak.'
         : 'Sarah menghela napas lega melihat kerumunan di lobi kantor mulai kondusif.'
@@ -908,10 +908,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'INTERN HACKER',
       background: 'tech-expo-stage',
       dialogue: index === 0
-        ? 'Bang, kabel HDMI panggung udah gue cabut lagi sebelum satpam nyadar! Bocoran presentasi Aldi barusan udah ditonton 2 juta orang di TikTok!'
+        ? 'HDMI sudah gue cabut! Bocoran Aldi ditonton dua juta orang!'
         : index === 1
-          ? 'Gokil Bang! Muka Aldi langsung pucat pasi pas lo rebut mic panggung dan bagi-bagi voucher gratis di depan ribuan peserta!'
-          : 'Trik booth gerilya dekat toilet VIP manjur berat, Bang! Tiga direktur HRD BUMN langsung tanda tangan MOU sambil nunggu antrean!',
+          ? 'Aldi pucat pas lo rebut mic di depan ribuan orang!'
+          : 'Booth dekat toilet sukses! Tiga direktur BUMN tanda tangan MOU!',
       detail: 'Kevin merapikan rompi proyek oranye di belakang panggung Indonesia Tech Expo sambil tersenyum puas.'
     });
   } else if (week === 7) {
@@ -921,10 +921,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'SALES',
       background: 'night',
       dialogue: index === 0
-        ? 'Armada emak-emak Bu Tejo sama bot favela beneran ngeri! Akun @StartupSengsara langsung hilang dari peredaran malam ini juga!'
+        ? 'Armada Bu Tejo dan bot favela bikin @StartupSengsara menghilang!'
         : index === 1
-          ? 'Video klarifikasi Mas Damar malah dijadiin meme se-Indonesia! Untung sebagian netizen kasihan, tapi klien korporat banyak yang nanya-nanya!'
-          : 'Anjir, ngaku kalau semua ini social experiment malah bikin konversi sales kita meledak 600% malam ini! Netizen FOMO parah!',
+          ? 'Video Damar jadi meme! Ada yang simpati, tapi klien banyak bertanya.'
+          : 'Ngaku social experiment malah bikin konversi naik 600%!',
       detail: 'Rani memantau grafik lonjakan trafik malam hari dari layar monitor War Room.'
     });
   } else if (week === 8) {
@@ -934,10 +934,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'VENTURE CAPITAL',
       background: 'penthouse-lounge',
       dialogue: index === 0
-        ? 'Nolak cek instan gue dan milih unjuk gigi pakai ekosistem sendiri? Nyali lo gede juga. Gue tunggu buktinya di sidang BoD.'
+        ? 'Tolak cek demi ekosistem sendiri? Berani juga. Buktikan di sidang.'
         : index === 1
-          ? 'Keputusan realistis. Mulai sekarang 51% kendali strategis ada di tangan gue. Jangan bikin gue rugi di rapat direksi.'
-          : 'Hahaha! Berani taruhan churn rate sama gue? Oke, gue transfer dana segarnya sekarang. Sampai ketemu di ruang sidang!',
+          ? 'Realistis. Sekarang 51% kendali milik gue. Jangan bikin rugi.'
+          : 'Taruhan churn rate? Oke, dana segar gue transfer. Sampai di sidang!',
       detail: 'Bima menyesap espresso di sofa kulit penthouse sambil menutup map investasinya.'
     });
   } else if (week === 9) {
@@ -947,10 +947,10 @@ function buildReactions(week, choice, spent, index) {
       division: 'CEO',
       background: 'boardroom',
       dialogue: index === 0
-        ? 'Presentasi penutup yang luar biasa! Seluruh komisaris sampai terdiam melihat semua kepingan strategi gila kita menyatu sempurna!'
+        ? 'Presentasi luar biasa! Komisaris terdiam melihat strategi kita menyatu.'
         : index === 1
-          ? 'Langkah yang aman buat menyelamatkan kas perusahaan. Setidaknya kita semua masih punya gaji bulan depan.'
-          : 'Hahaha! Gue nggak nyangka rapat dewan direksi bakal ditutup pakai goyang Samba bareng komisaris! Ini baru startup legendaris!',
+          ? 'Langkah aman buat kas. Setidaknya gaji bulan depan selamat.'
+          : 'Rapat direksi ditutup goyang samba! Startup legendaris!',
       detail: 'Damar menjabat erat tanganmu di meja bundar direksi sesaat sebelum hasil akhir diumumkan.'
     });
   }
