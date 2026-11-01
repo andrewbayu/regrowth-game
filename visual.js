@@ -419,7 +419,7 @@ const travelScenes = {
     options: [['Penasaran, turun dan lihat keramaiannya', 'travel_demo'], ['Tetap di mobil dan lanjut saat jalan terbuka', 'travel_arrive']]
   },
   travel_demo: {
-    background: 'travel-protest', location: 'TENGAH KOTA', title: 'Terseret arus massa',
+    background: 'travel-protest-v2', location: 'TENGAH KOTA', title: 'Terseret arus massa',
     speaker: 'Peserta Aksi', dialogue: 'Mas, jangan bengong di tengah jalan! Kalau mau ikut, sini pegang kardusnya!',
     body: 'Ternyata ada aksi demonstrasi. Seorang peserta menyodorkan kardus bekas bertuliskan tuntutan yang belum sempat kamu baca. Sopir kantor menunggu di ujung jalan sambil melambaikan tangan.',
     question: 'Kamu memilih apa?',
@@ -432,7 +432,7 @@ const travelScenes = {
     question: '', options: [['Temui Damar di kafe', 'game']]
   },
   travel_mrt: {
-    background: 'travel-mrt', location: 'DI DALAM MRT', title: 'Penumpang paling tidak terduga',
+    background: 'travel-mrt-v2', location: 'DI DALAM MRT', title: 'Penumpang paling tidak terduga',
     speaker: 'Kamu · CMO Baru', dialogue: 'Sebentar... itu Presiden? Di gerbong yang sama? Ini Jakarta atau simulasi?',
     body: 'Di ujung gerbong, Presiden fiksi negeri ini sedang meninjau transportasi umum bersama pengawal. Pintu akan terbuka di stasiun berikutnya—waktumu untuk mencapai Senopati makin tipis.',
     question: 'Apa yang kamu lakukan?',
@@ -478,7 +478,7 @@ function showTravel() {
   const scene = travelScenes[state.page];
   if (!scene) { state.page = state.pending; render(); return; }
   main.innerHTML = `
-    <section class="story-screen" style="background-image:url(assets/${scene.background}.png)">
+    <section class="story-screen${state.page === 'travel_demo' ? ' protest-scene' : ''}" style="background-image:url(assets/${scene.background}.png)">
       <header class="story-head"><div class="day-title">MINGGU 2</div><div class="day-meta">${scene.location}<strong>OTW SENOPATI</strong></div></header>
       <div class="story-body"><div class="story-panel"><div class="speaker">${scene.speaker}</div>
         <div class="dialogue">“${scene.dialogue}”</div><h2>${scene.title}</h2><p>${scene.body}</p></div>
