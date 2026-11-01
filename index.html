@@ -14,10 +14,11 @@ body{background:#080b10;min-height:100vh;min-height:100svh;display:flex;justify-
 .story-screen:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#07111688 0%,#07111608 27%,#080d1255 50%,#070b10ec 82%,#070b10fb 100%)}
 .cover{align-items:center;text-align:center;justify-content:center;padding:36px 24px;background-image:url('assets/office.png')}
 .cover:before{background:linear-gradient(180deg,#07131585,#0611128c 50%,#080c10ed)}
-.growthos-ribbon{position:absolute;z-index:3;top:10px;left:14px;max-width:calc(100% - 120px);min-height:44px;display:flex;align-items:center;gap:8px;color:#e9f0e8;text-decoration:none;text-align:left;font-size:10px;line-height:1.35;text-shadow:0 1px 5px #000}
-.growthos-ribbon strong{display:block;color:#fff;font-size:11px;font-weight:750}
-.growthos-mark{display:grid;place-items:center;flex:none;width:27px;height:27px;border:1px solid #ff9e8c;border-radius:8px;color:#ff9581;background:#101514b8;font-size:16px;line-height:1}
-.growthos-ribbon:hover strong{text-decoration:underline;text-underline-offset:3px}.growthos-ribbon:focus-visible{outline:2px solid #d0ec80;outline-offset:3px;border-radius:4px}
+.growthos-ribbon{position:absolute;z-index:3;top:10px;left:14px;max-width:calc(100% - 120px);min-height:44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;color:#eef2ec;text-decoration:none;text-align:left;line-height:1.2;text-shadow:0 1px 5px #000}
+.growthos-credit{font-size:10px;color:#e0e9df}
+.growthos-brand{display:flex;align-items:center;gap:5px;max-width:100%;font-size:10px;font-weight:700}
+.growthos-brand img{display:block;width:clamp(100px,29vw,145px);max-width:calc(100% - 30px);height:auto}
+.growthos-ribbon:hover{filter:brightness(1.15)}.growthos-ribbon:focus-visible{outline:2px solid #d0ec80;outline-offset:3px;border-radius:4px}
 
 .title-logo{display:block;width:min(100%,500px);height:auto;object-fit:contain;filter:drop-shadow(0 8px 16px #000a)}
 .cover-logo{position:relative;isolation:isolate;width:min(100%,520px);padding:17px 19px 13px;background:linear-gradient(135deg,#101c28ed,#20223bed 65%,#451e39e8);border:2px solid #d8f28c;border-radius:9px;transform:rotate(-1.5deg);box-shadow:0 8px 0 #101521,0 15px 35px #000b;text-shadow:0 3px 5px #081016}
