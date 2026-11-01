@@ -24,7 +24,7 @@ function layoutStoryScene() {
   stage.className = 'story-stage';
   const character = screen.querySelector('.story-character');
   if (character) {
-    if (character.getAttribute('src').startsWith('assets/founder')) stage.classList.add('character-closeup');
+    stage.classList.add('character-closeup');
     stage.append(character);
   }
   screen.insertBefore(stage, body);
