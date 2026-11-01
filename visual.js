@@ -287,7 +287,7 @@ function showTransition() {
   }
   aside.innerHTML = '';
   main.innerHTML = `
-    <section class="story-screen" style="background-image:url(assets/${tr.background}.png)">
+    <section class="story-screen${tr.background === 'airplane-flight' ? ' flight-scene' : ''}" style="background-image:url(assets/${tr.background}.png)">
       <header class="story-head">
         <div class="day-title" style="font-size:clamp(17px,4.5vw,24px)">${tr.title}</div>
         <div class="day-meta">CUTSCENE<strong>TRANSISI</strong></div>

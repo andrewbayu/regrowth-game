@@ -727,15 +727,15 @@ const transitions = {
   4: {
     background: 'airplane-flight',
     title: 'TRANSISI PENERBANGAN · 36 JAM KE SÃO PAULO',
-    heading: 'Lepas Landas Menembus Tiga Benua Menuju Brazil',
-    body: 'Setelah tiket dan dokumen keberangkatan beres, pesawat yang kamu tumpangi akhirnya lepas landas dari Bandara Soekarno-Hatta menembus awan. Tiga transit melelahkan di Malaysia, Qatar, dan Ethiopia berhasil kamu lewati sebelum mendarat di teriknya matahari São Paulo, Brazil.',
+    heading: 'Menuju São Paulo',
+    body: 'Setelah 36 jam dan transit di Malaysia, Qatar, serta Ethiopia, kamu tiba di São Paulo untuk menyelidiki cabang Brazil.',
     button: 'Mendarat di Favela São Paulo →'
   },
   5: {
     background: 'airplane-flight',
     title: 'TRANSISI KEPULANGAN · TERBANG KEMBALI KE JAKARTA',
-    heading: 'Pulang Membawa Manuver dari Amerika Latin',
-    body: 'Setelah menuntaskan urusan di markas favela Thiago, kamu kembali menempuh penerbangan panjang melintasi samudra menuju Jakarta. Namun begitu pesawat mendarat dan ponselmu menyala, pesan darurat bertubi-tubi masuk dari tim CS kantor pusat.',
+    heading: 'Kembali ke Jakarta',
+    body: 'Urusan dengan Thiago selesai. Begitu mendarat di Jakarta, pesan darurat dari tim CS langsung membanjiri ponselmu.',
     button: 'Tiba Kembali di Lobi Kantor Jakarta →'
   },
   6: {
