@@ -59,7 +59,7 @@ function showArrival() {
         <div class="day-title">HARI PERTAMA</div>
         <div class="day-meta">PELATARAN GEDUNG<strong>08:45 WIB</strong></div>
       </header>
-      <div class="story-body" style="padding-top:180px">
+      <div class="story-body">
         <div class="story-panel">
           <div class="speaker">Kamu · CMO Baru</div>
           <div class="dialogue">“Setelah tujuh ronde interview gila dan tes psikologi yang absurd, akhirnya hari ini tiba. Ini dia menara kantor Ruang Tumbuh.”</div>
@@ -263,7 +263,7 @@ function showTransition() {
         <div class="day-title" style="font-size:clamp(17px,4.5vw,24px)">${tr.title}</div>
         <div class="day-meta">CUTSCENE<strong>TRANSISI</strong></div>
       </header>
-      <div class="story-body" style="padding-top:210px">
+      <div class="story-body">
         <div class="story-panel" style="backdrop-filter:blur(16px);border-color:#d0ec8066">
           <div class="speaker">Perjalanan Cerita</div>
           <h2>${tr.heading}</h2>
