@@ -9,6 +9,22 @@
   let audioContext;
   let currentTarget = null;
   let fadeTimer = null;
+  let awaitingGesture = false;
+  let playbackFailed = false;
+  let playAttempt = 0;
+  let skipSceneCue = false;
+  const samples = {
+    start: 'assets/confirmation_002.wav',
+    select: 'assets/click_001.wav',
+    transition: 'assets/open_001.wav',
+    danger: 'assets/error_001.wav'
+  };
+  const sfx = Object.fromEntries(Object.entries(samples).map(([name, src]) => {
+    const audio = new Audio(src);
+    audio.preload = 'auto';
+    audio.volume = 0.35;
+    return [name, audio];
+  }));
 
   if (bgmStart) bgmStart.volume = TARGET_VOLUME;
   if (bgmGame) bgmGame.volume = 0;
@@ -16,7 +32,11 @@
   function getDesiredTrack() {
     const isStart = (typeof state !== 'undefined' && state && state.page === 'start') ||
                     Boolean(document.querySelector('.cover'));
-    return isStart ? 'start' : 'game';
+    if (isStart) return 'start';
+    const travel = typeof state !== 'undefined' && state &&
+      ((state.page === 'transition' && [1, 4, 5, 6].includes(state.week)) ||
+       (state.page.startsWith('travel_') && !state.page.startsWith('travel_arrest')));
+    return travel ? 'travel' : 'game';
   }
 
   function getActiveAudio() {
@@ -25,14 +45,53 @@
   }
 
   function updateToggle() {
-    toggle.textContent = enabled ? 'Suara aktif' : 'Suara mati';
-    toggle.setAttribute('aria-pressed', String(enabled));
-    toggle.setAttribute('aria-label', enabled ? 'Matikan suara' : 'Nyalakan suara');
+    toggle.textContent = !enabled
+      ? '♫ Suara mati'
+      : playbackFailed
+        ? '♫ Suara bermasalah'
+        : awaitingGesture
+          ? '♫ Ketuk untuk suara'
+          : '♫ Suara aktif';
+    toggle.setAttribute('aria-pressed', String(enabled && !awaitingGesture && !playbackFailed));
+    toggle.setAttribute('aria-label', !enabled || awaitingGesture || playbackFailed ? 'Nyalakan suara' : 'Matikan suara');
   }
 
   function dockToggle() {
     const screen = document.querySelector('.story-screen');
     if (screen && !screen.contains(toggle)) screen.append(toggle);
+  }
+
+  function playAudio(audio) {
+    const attempt = ++playAttempt;
+    const onPlaying = () => {
+      if (attempt !== playAttempt || !enabled || audio !== getActiveAudio()) return;
+      awaitingGesture = false;
+      playbackFailed = false;
+      updateToggle();
+    };
+    const onFailure = (error) => {
+      if (attempt !== playAttempt || !enabled || audio !== getActiveAudio()) return;
+      if (error && error.name === 'AbortError') return;
+      awaitingGesture = Boolean(error && error.name === 'NotAllowedError');
+      playbackFailed = !awaitingGesture;
+      updateToggle();
+    };
+    try {
+      const promise = audio.play();
+      if (promise && typeof promise.then === 'function') promise.then(onPlaying).catch(onFailure);
+      else onPlaying();
+    } catch (error) { onFailure(error); }
+  }
+
+  function playSample(name) {
+    if (!enabled) return;
+    const audio = sfx[name];
+    if (!audio) return;
+    try {
+      audio.currentTime = 0;
+      const promise = audio.play();
+      if (promise && typeof promise.catch === 'function') promise.catch(() => soundEffect(name === 'start' ? 'transition' : 'select'));
+    } catch (_) { soundEffect(name === 'start' ? 'transition' : 'select'); }
   }
 
   function syncMusic(forcePlay = false) {
@@ -41,6 +100,14 @@
     const inactiveAudio = desired === 'start' ? bgmGame : bgmStart;
 
     if (!activeAudio) return;
+
+    if (bgmGame && desired !== 'start') {
+      const target = desired === 'travel' ? 'assets/cc0-travel-loop.mp3' : 'assets/strategic-pause.mp3';
+      if (bgmGame.src !== new URL(target, window.location.href).href) {
+        bgmGame.src = target;
+        bgmGame.currentTime = 0;
+      }
+    }
 
     if (!bgmGame && bgmStart) {
       const targetSrc = desired === 'start' ? 'assets/ambitions-pulse.mp3' : 'assets/strategic-pause.mp3';
@@ -51,7 +118,7 @@
         bgmStart.currentTime = 0;
       }
       if (enabled && (forcePlay || !bgmStart.paused || currentTarget !== desired)) {
-        bgmStart.play().catch(() => {});
+        playAudio(bgmStart);
       }
       currentTarget = desired;
       return;
@@ -59,7 +126,7 @@
 
     if (currentTarget === desired && !forcePlay) {
       if (enabled && activeAudio.paused) {
-        activeAudio.play().catch(() => {});
+        playAudio(activeAudio);
       }
       return;
     }
@@ -82,7 +149,7 @@
     if (wasInactivePlaying) {
       activeAudio.volume = 0;
       activeAudio.currentTime = 0;
-      activeAudio.play().catch(() => {});
+      playAudio(activeAudio);
 
       let step = 0;
       const steps = 10;
@@ -110,7 +177,7 @@
         inactiveAudio.currentTime = 0;
       }
       activeAudio.volume = TARGET_VOLUME;
-      activeAudio.play().catch(() => {});
+      playAudio(activeAudio);
     }
   }
 
@@ -123,8 +190,10 @@
       clearInterval(fadeTimer);
       fadeTimer = null;
     }
+    ++playAttempt;
     if (bgmStart) bgmStart.pause();
     if (bgmGame) bgmGame.pause();
+    Object.values(sfx).forEach(audio => { audio.pause(); audio.currentTime = 0; });
   }
 
   function soundEffect(type) {
@@ -132,7 +201,7 @@
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) return;
     audioContext ||= new AudioContextClass();
-    if (audioContext.state === 'suspended') audioContext.resume();
+    if (audioContext.state === 'suspended') audioContext.resume().catch(() => {});
     const now = audioContext.currentTime;
     const oscillator = audioContext.createOscillator();
     const gain = audioContext.createGain();
@@ -146,42 +215,29 @@
     gain.gain.exponentialRampToValueAtTime(0.0001, now + (isDialogue ? 0.42 : isTransition ? 0.19 : 0.075));
     oscillator.connect(gain).connect(audioContext.destination);
     oscillator.start(now);
-    oscillator.stop(now + (isTransition ? 0.2 : 0.08));
+    oscillator.stop(now + (isDialogue ? 0.43 : isTransition ? 0.2 : 0.08));
   }
 
-  // Short musical cues give each scene a distinct mood without extra downloads.
   function sceneEffect() {
     if (!enabled || typeof state === 'undefined' || state.page === 'start') return;
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) return;
-    audioContext ||= new AudioContextClass();
-    if (audioContext.state === 'suspended') audioContext.resume();
-
+    if (skipSceneCue) { skipSceneCue = false; return; }
     const page = state.page;
-    const tense = page === 'fire' || page === 'smoke' || page === 'bad_ending_fire' || page.startsWith('travel_arrest') || page === 'travel_demo' ||
-      (page === 'reaction' && state.lastDelta && state.lastDelta.cash < 0);
-    const notes = tense ? [180, 120] : page === 'starling' ? [880, 1175] :
-      page === 'transition' ? [330, 440, 554] :
-      page === 'arrival' || page === 'welcome' ? [392, 523, 659] : [440, 554];
-    const now = audioContext.currentTime;
-    notes.forEach((frequency, index) => {
-      const start = now + index * (tense ? 0.12 : 0.09);
-      const oscillator = audioContext.createOscillator();
-      const gain = audioContext.createGain();
-      oscillator.type = tense ? 'triangle' : 'sine';
-      oscillator.frequency.setValueAtTime(frequency, start);
-      if (tense) oscillator.frequency.exponentialRampToValueAtTime(frequency * 0.72, start + 0.25);
-      gain.gain.setValueAtTime(0.0001, start);
-      gain.gain.exponentialRampToValueAtTime(tense ? 0.035 : 0.025, start + 0.02);
-      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.3);
-      oscillator.connect(gain).connect(audioContext.destination);
-      oscillator.start(start);
-      oscillator.stop(start + 0.31);
-    });
+    const isAngryReaction = page === 'reaction' && state.reactions && state.reactions[0] && state.reactions[0].sprite === 'finance-angry';
+    if (page === 'fire' || page === 'bad_ending_fire' || page.startsWith('travel_arrest') || isAngryReaction) {
+      playSample('danger');
+    } else if (page === 'transition' || page === 'travel_mrt' || page === 'travel_demo' || page === 'welcome') {
+      playSample('transition');
+    } else if (page === 'result') {
+      playSample('start');
+    }
   }
 
   toggle.addEventListener('click', (event) => {
     event.stopPropagation();
+    if (enabled && (awaitingGesture || playbackFailed)) {
+      startMusic();
+      return;
+    }
     enabled = !enabled;
     localStorage.setItem(storageKey, String(enabled));
     if (enabled) {
@@ -193,27 +249,38 @@
   });
 
   function handleInteraction(event) {
+    if (!event || !event.target || typeof event.target.closest !== 'function') return;
     if (event.target === toggle || toggle.contains(event.target)) return;
+    // Do not start cover music on pointerdown if the user is clicking "Mulai cerita" (#start),
+    // because its click handler immediately transitions to the game track.
+    if (event.type !== 'click' && event.target.closest('#start')) return;
     if (enabled) {
       const active = getActiveAudio();
       if (active && active.paused) {
         startMusic();
       }
-    }
-    const button = event.target.closest('button');
-    if (button && button !== toggle && button.matches('.story-choice')) {
-      soundEffect('select');
     }
   }
 
+  document.addEventListener('click', (event) => {
+    if (!event.target || typeof event.target.closest !== 'function') return;
+    const button = event.target.closest('button');
+    if (!button || button === toggle) return;
+    if (button.id === 'start' && enabled) {
+      skipSceneCue = true;
+      playSample('start');
+    } else if (button.matches('.story-choice') || button.id === 'restart') {
+      playSample('select');
+    }
+  }, true);
+
   document.addEventListener('click', handleInteraction);
-  document.addEventListener('pointerdown', (event) => {
-    if (event.target === toggle || toggle.contains(event.target)) return;
-    if (enabled) {
+  document.addEventListener('pointerdown', handleInteraction);
+  document.addEventListener('touchstart', handleInteraction, { passive: true });
+  document.addEventListener('keydown', (event) => {
+    if (enabled && (awaitingGesture || playbackFailed)) {
       const active = getActiveAudio();
-      if (active && active.paused) {
-        startMusic();
-      }
+      if (active && active.paused) startMusic();
     }
   });
 
