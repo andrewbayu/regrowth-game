@@ -1091,5 +1091,6 @@ function render() {
   else if (state.page === 'game') showGame();
   else if (state.page === 'reaction') showReaction();
   else showResult();
+  layoutStoryScene();
   window.dispatchEvent(new Event('regrowth:scene'));
 }

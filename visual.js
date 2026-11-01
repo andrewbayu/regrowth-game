@@ -1,5 +1,33 @@
 // Tampilan cerita interaktif RE:GROWTH (Chaos Edition). Data cerita & ending berada di game.js.
 
+// Keep narrative context above the artwork and dialogue/choices below it.
+function layoutStoryScene() {
+  const screen = main.querySelector('.story-screen');
+  const body = screen?.querySelector('.story-body');
+  const panel = body?.querySelector('.story-panel');
+  if (!screen || !body || !panel) return;
+
+  const context = document.createElement('section');
+  context.className = 'story-context';
+  const outcome = body.querySelector('.previous-outcome');
+  if (outcome) context.append(outcome);
+  const dialogue = panel.querySelector('.dialogue');
+  if (!dialogue) {
+    const speaker = panel.querySelector('.speaker');
+    if (speaker) context.append(speaker);
+  }
+  Array.from(panel.children).filter(element => element.matches('h2, p')).forEach(element => context.append(element));
+  if (context.children.length) screen.insertBefore(context, body);
+  if (!dialogue) panel.remove();
+
+  const stage = document.createElement('div');
+  stage.className = 'story-stage';
+  const character = screen.querySelector('.story-character');
+  if (character) stage.append(character);
+  screen.insertBefore(stage, body);
+  screen.classList.add('story-split');
+}
+
 function animateDialogue() {
   document.querySelectorAll('.dialogue').forEach(element => {
     if (element.dataset.typed === 'true') return;
