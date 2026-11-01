@@ -14,10 +14,9 @@ body{background:#080b10;min-height:100vh;min-height:100svh;display:flex;justify-
 .story-screen:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#07111688 0%,#07111608 27%,#080d1255 50%,#070b10ec 82%,#070b10fb 100%)}
 .cover{align-items:center;text-align:center;justify-content:center;padding:36px 24px;background-image:url('assets/office.png')}
 .cover:before{background:linear-gradient(180deg,#07131585,#0611128c 50%,#080c10ed)}
-.growthos-ribbon{position:absolute;z-index:3;top:10px;left:14px;max-width:calc(100% - 120px);min-height:44px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:2px;color:#eef2ec;text-decoration:none;text-align:left;line-height:1.2;text-shadow:0 1px 5px #000}
-.growthos-credit{font-size:10px;color:#e0e9df}
-.growthos-brand{display:flex;align-items:center;gap:5px;max-width:100%;font-size:10px;font-weight:700}
-.growthos-brand img{display:block;width:clamp(100px,29vw,145px);max-width:calc(100% - 30px);height:auto}
+.growthos-ribbon{position:relative;z-index:2;width:min(100%,320px);min-height:44px;margin-top:16px;padding:12px 8px 3px;border-top:1px solid #ffffff35;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#dce8db;text-decoration:none;text-align:center;font-size:12px;line-height:1.45;text-shadow:0 1px 5px #000}
+.growthos-brand{display:flex;align-items:center;justify-content:center;gap:7px;max-width:100%;color:#cfe994;font-size:13px}
+.growthos-brand img{display:block;width:145px;max-width:100%;height:auto}
 .growthos-ribbon:hover{filter:brightness(1.15)}.growthos-ribbon:focus-visible{outline:2px solid #d0ec80;outline-offset:3px;border-radius:4px}
 
 .title-logo{display:block;width:min(100%,500px);height:auto;object-fit:contain;filter:drop-shadow(0 8px 16px #000a)}
@@ -71,7 +70,7 @@ body{background:#080b10;min-height:100vh;min-height:100svh;display:flex;justify-
 @media(min-width:700px){.shell{margin:20px auto;min-height:0;border:1px solid #34413a;border-radius:18px;overflow:hidden}.story-screen:not(.result-screen){min-height:min(850px,calc(100dvh - 40px))}}
 @media(max-width:600px){
   .story-screen{min-height:100svh}
-  .cover{padding:64px 20px max(24px,env(safe-area-inset-bottom));justify-content:center}
+  .cover{padding:48px 20px max(24px,env(safe-area-inset-bottom));justify-content:center}
   .title-logo{width:min(80%,300px)}
   .cover-subtitle{font-size:10px;line-height:1.5;margin-top:10px;letter-spacing:.08em}
   .cover p{font-size:13px;line-height:1.5;margin:12px 0}
