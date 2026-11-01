@@ -31,17 +31,15 @@ function showStart() {
   aside.innerHTML = '';
   main.innerHTML = `
     <section class="story-screen cover">
-      <div class="cover-brand">GrowthOS · Interactive Story (Chaos Edition)</div>
       <img class="title-logo" src="assets/title-logo.png" alt="Aku Direkrut Jadi CMO Saat Perusahaan Ini Cuma Punya 50 Hari — RE:GROWTH">
       <div class="cover-subtitle">Sepuluh minggu. Lima puluh hari kerja. Satu kesempatan gila.</div>
       <p>Ruang Tumbuh berada di ujung tanduk. Sebagai CMO baru, pimpin tim membongkar krisis kas, mengintai kompetitor di Senopati, hingga menjelajahi favela Brazil sebelum vonis akhir direksi.</p>
       <div class="cover-stakes">
         <span>10 MINGGU / 50 HARI</span>
         <span>ABSURD SCENARIOS</span>
-        <span>4 UNIQUE ENDINGS</span>
       </div>
       <button class="primary" id="start">Mulai cerita →</button>
-      <div class="cover-foot">Satir interaktif korporat & startup · Keputusan gilamu memicu 1 dari 4 ending (+ 1 Secret Bad Ending).</div>
+      <div class="cover-foot">Satir interaktif tentang dunia startup dan keputusan bisnis.</div>
     </section>
   `;
   document.querySelector('#start').onclick = () => {

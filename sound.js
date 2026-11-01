@@ -149,6 +149,37 @@
     oscillator.stop(now + (isTransition ? 0.2 : 0.08));
   }
 
+  // Short musical cues give each scene a distinct mood without extra downloads.
+  function sceneEffect() {
+    if (!enabled || typeof state === 'undefined' || state.page === 'start') return;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    audioContext ||= new AudioContextClass();
+    if (audioContext.state === 'suspended') audioContext.resume();
+
+    const page = state.page;
+    const tense = page === 'fire' || page === 'smoke' || page === 'bad_ending_fire' ||
+      (page === 'reaction' && state.lastDelta && state.lastDelta.cash < 0);
+    const notes = tense ? [180, 120] : page === 'starling' ? [880, 1175] :
+      page === 'transition' ? [330, 440, 554] :
+      page === 'arrival' || page === 'welcome' ? [392, 523, 659] : [440, 554];
+    const now = audioContext.currentTime;
+    notes.forEach((frequency, index) => {
+      const start = now + index * (tense ? 0.12 : 0.09);
+      const oscillator = audioContext.createOscillator();
+      const gain = audioContext.createGain();
+      oscillator.type = tense ? 'triangle' : 'sine';
+      oscillator.frequency.setValueAtTime(frequency, start);
+      if (tense) oscillator.frequency.exponentialRampToValueAtTime(frequency * 0.72, start + 0.25);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(tense ? 0.035 : 0.025, start + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.3);
+      oscillator.connect(gain).connect(audioContext.destination);
+      oscillator.start(start);
+      oscillator.stop(start + 0.31);
+    });
+  }
+
   toggle.addEventListener('click', (event) => {
     event.stopPropagation();
     enabled = !enabled;
@@ -189,7 +220,7 @@
   window.addEventListener('regrowth:scene', () => {
     dockToggle();
     syncMusic();
-    if (!document.querySelector('.dialogue')) soundEffect('transition');
+    sceneEffect();
   });
 
   window.addEventListener('regrowth:dialogue', () => soundEffect('dialogue'));
