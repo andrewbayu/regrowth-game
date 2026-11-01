@@ -14,6 +14,11 @@ body{background:#080b10;min-height:100vh;min-height:100svh;display:flex;justify-
 .story-screen:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#07111688 0%,#07111608 27%,#080d1255 50%,#070b10ec 82%,#070b10fb 100%)}
 .cover{align-items:center;text-align:center;justify-content:center;padding:36px 24px;background-image:url('assets/office.png')}
 .cover:before{background:linear-gradient(180deg,#07131585,#0611128c 50%,#080c10ed)}
+.growthos-ribbon{position:absolute;z-index:3;top:10px;left:14px;max-width:calc(100% - 120px);min-height:44px;display:flex;align-items:center;gap:8px;color:#e9f0e8;text-decoration:none;text-align:left;font-size:10px;line-height:1.35;text-shadow:0 1px 5px #000}
+.growthos-ribbon strong{display:block;color:#fff;font-size:11px;font-weight:750}
+.growthos-mark{display:grid;place-items:center;flex:none;width:27px;height:27px;border:1px solid #ff9e8c;border-radius:8px;color:#ff9581;background:#101514b8;font-size:16px;line-height:1}
+.growthos-ribbon:hover strong{text-decoration:underline;text-underline-offset:3px}.growthos-ribbon:focus-visible{outline:2px solid #d0ec80;outline-offset:3px;border-radius:4px}
+
 .title-logo{display:block;width:min(100%,500px);height:auto;object-fit:contain;filter:drop-shadow(0 8px 16px #000a)}
 .cover-logo{position:relative;isolation:isolate;width:min(100%,520px);padding:17px 19px 13px;background:linear-gradient(135deg,#101c28ed,#20223bed 65%,#451e39e8);border:2px solid #d8f28c;border-radius:9px;transform:rotate(-1.5deg);box-shadow:0 8px 0 #101521,0 15px 35px #000b;text-shadow:0 3px 5px #081016}
 .cover-logo:before,.cover-logo:after{position:absolute;z-index:-1;color:#ff687d;font-weight:900;line-height:1;text-shadow:2px 2px #20223b,-2px -2px #20223b,0 4px 9px #000a}
@@ -65,7 +70,7 @@ body{background:#080b10;min-height:100vh;min-height:100svh;display:flex;justify-
 @media(min-width:700px){.shell{margin:20px auto;min-height:0;border:1px solid #34413a;border-radius:18px;overflow:hidden}.story-screen:not(.result-screen){min-height:min(850px,calc(100dvh - 40px))}}
 @media(max-width:600px){
   .story-screen{min-height:100svh}
-  .cover{padding:48px 20px max(24px,env(safe-area-inset-bottom));justify-content:center}
+  .cover{padding:64px 20px max(24px,env(safe-area-inset-bottom));justify-content:center}
   .title-logo{width:min(80%,300px)}
   .cover-subtitle{font-size:10px;line-height:1.5;margin-top:10px;letter-spacing:.08em}
   .cover p{font-size:13px;line-height:1.5;margin:12px 0}

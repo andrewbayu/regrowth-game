@@ -62,6 +62,9 @@ function showStart() {
   aside.innerHTML = '';
   main.innerHTML = `
     <section class="story-screen cover">
+      <a class="growthos-ribbon" href="https://vault.adityabayu.com/" target="_blank" rel="noopener noreferrer" aria-label="Dibuat dengan GrowthOS Vault Pack, buka GrowthOS Vault di tab baru">
+        <span class="growthos-mark" aria-hidden="true">✳</span><span>Dibuat dengan <strong>GrowthOS Vault Pack</strong></span>
+      </a>
       <img class="title-logo" src="assets/title-logo-60.png" alt="Aku Direkrut Jadi CMO Saat Perusahaan Ini Cuma Punya 60 Hari — RE:GROWTH">
       <div class="cover-subtitle">Sepuluh babak. Enam puluh hari. Satu kesempatan gila.</div>
       <p>Ruang Tumbuh berada di ujung tanduk. Sebagai CMO baru, pimpin tim membongkar krisis kas, mengintai kompetitor di Senopati, hingga menjelajahi favela Brazil sebelum vonis akhir direksi.</p>
