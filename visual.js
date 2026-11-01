@@ -163,7 +163,7 @@ function showSmoke() {
         <div class="day-title">HARI PERTAMA</div>
         <div class="day-meta">POJOKAN PARKIRAN<strong>08:52 WIB</strong></div>
       </header>
-      <img class="story-character" src="assets/satpam.png?v=2" alt="Pak Slamet Satpam">
+      <img class="story-character" src="assets/satpam.png?v=4" alt="Pak Slamet Satpam">
       <div class="story-body">
         <div class="story-panel">
           <div class="speaker">Pak Slamet · Satpam Gedung</div>
@@ -329,7 +329,7 @@ function showGame() {
           <strong>◉ KAS ${state.stats.cash} · ⚡ CHAOS ${state.stats.chaos}</strong>
         </div>
       </header>
-      <img class="story-character" src="assets/${sprite}.png?v=2" alt="${week.speaker}">
+      <img class="story-character" src="assets/${sprite}.png?v=4" alt="${week.speaker}">
       <div class="story-body">
         ${state.previous ? `<div class="previous-outcome"><strong>Dampak keputusanmu:</strong> ${state.previous}</div>` : ''}
         <div class="story-panel">
@@ -363,7 +363,7 @@ function showReaction() {
         <div class="day-title reaction-division">${reaction.division}</div>
         <div class="day-meta">KONDISI KAS<strong>◉ ${state.stats.cash} / 100</strong></div>
       </header>
-      <img class="story-character" src="assets/${reaction.sprite}.png?v=2" alt="${reaction.speaker}">
+      <img class="story-character" src="assets/${reaction.sprite}.png?v=4" alt="${reaction.speaker}">
       <div class="story-body">
         <div class="story-panel">
           <div class="speaker">${reaction.speaker}</div>
