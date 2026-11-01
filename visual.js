@@ -23,7 +23,10 @@ function layoutStoryScene() {
   const stage = document.createElement('div');
   stage.className = 'story-stage';
   const character = screen.querySelector('.story-character');
-  if (character) stage.append(character);
+  if (character) {
+    if (character.getAttribute('src').startsWith('assets/founder')) stage.classList.add('character-closeup');
+    stage.append(character);
+  }
   screen.insertBefore(stage, body);
   screen.classList.add('story-split');
 }
