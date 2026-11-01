@@ -98,7 +98,7 @@ function showStarling() {
         <div class="day-title">HARI PERTAMA</div>
         <div class="day-meta">TROTOAR DEPAN GEDUNG<strong>08:50 WIB</strong></div>
       </header>
-      <img class="story-character" src="assets/starling.png?v=2" alt="Bang Udin Starling">
+      <img class="story-character" src="assets/starling-remake.png" alt="Bang Udin Starling">
       <div class="story-body">
         <div class="story-panel">
           <div class="speaker">Bang Udin · Barista Sepeda Starling</div>
