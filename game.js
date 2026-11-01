@@ -1,4 +1,4 @@
-// Sepuluh minggu kerja (50 hari kerja) untuk menyelamatkan Ruang Tumbuh.
+// Sepuluh babak mingguan untuk menyelamatkan Ruang Tumbuh dalam 60 hari.
 // Setiap keputusan membuka konsekuensi liar, intelijen, manuver internasional, dan 4 ending unik (+ 1 Secret Bad Ending).
 
 const weeks = [
@@ -8,7 +8,7 @@ const weeks = [
     speaker: 'Damar · CEO',
     sprite: 'founder',
     background: 'boardroom',
-    intro: 'Pintu ruang sidang lantai 12 tertutup rapat. Di layar proyektor terpampang fakta mengerikan: kas hanya cukup untuk 50 hari kerja, tagihan misterius $15.000/bulan mengalir ke cabang antah-berantah di São Paulo, Brazil, dan kompetitor mulai membajak pengajar terbaik.',
+    intro: 'Pintu ruang sidang lantai 12 tertutup rapat. Di layar proyektor terpampang fakta mengerikan: kas hanya cukup untuk 60 hari, tagihan misterius $15.000/bulan mengalir ke cabang antah-berantah di São Paulo, Brazil, dan kompetitor mulai membajak pengajar terbaik.',
     dialogue: 'Semua mata direksi sekarang menatapmu. BoD menuntut terobosan gila dalam 10 minggu ke depan. Manuver pertamamu apa?',
     question: 'Di depan dewan direksi, langkah pertama apa yang kamu ambil untuk membongkar krisis ini?',
     variants: [{
@@ -632,11 +632,11 @@ const weeks = [
     speaker: 'Damar · CEO',
     sprite: 'founder',
     background: 'boardroom',
-    intro: 'Hari kerja ke-50. Kamu kembali ke ruang rapat direksi lantai 12 tempat semua bermula. Seluruh jajaran hadir: Mira, Bagas, Sarah, Rani, Naya, Kevin, Madam Aurel, Bima, hingga layar video call dari cabang São Paulo. Waktu evaluasi telah habis.',
+    intro: 'Hari ke-60. Kamu kembali ke ruang rapat direksi lantai 12 tempat semua bermula. Seluruh jajaran hadir: Mira, Bagas, Sarah, Rani, Naya, Kevin, Madam Aurel, Bima, hingga layar video call dari cabang São Paulo. Waktu evaluasi telah habis.',
     variants: [
       {
         body: 'Palu sidang direksi diletakkan di tengah meja. Semua mata tertuju pada layar presentasi akhirmu.',
-        dialogue: 'Lima puluh hari yang luar biasa kacau, tapi kita berhasil sampai di sini. Sampaikan rekomendasi pamungkasmu ke Dewan Direksi.',
+        dialogue: 'Enam puluh hari yang luar biasa kacau, tapi kita berhasil sampai di sini. Sampaikan rekomendasi pamungkasmu ke Dewan Direksi.',
         options: [
           [
             'Paparkan portofolio ekosistem terpadu: efisiensi dev Brazil, armada komunitas, dan dominasi pasar.',
@@ -677,7 +677,7 @@ const weeks = [
         ]
       },
       {
-        body: 'Layar proyektor ruang sidang menampilkan rekapitulasi metrik lima puluh hari terakhir di hadapan para pemegang saham.',
+        body: 'Layar proyektor ruang sidang menampilkan rekapitulasi metrik enam puluh hari terakhir di hadapan para pemegang saham.',
         dialogue: 'Apapun hasil musyawarah hari ini, kita sudah mengubah cara bermain game bisnis ini selamanya.',
         options: [
           [
@@ -761,7 +761,7 @@ const transitions = {
   },
   9: {
     background: 'boardroom',
-    title: 'TRANSISI PENENTUAN · HARI KERJA KE-50',
+    title: 'TRANSISI PENENTUAN · HARI KE-60',
     heading: 'Pintu Ruang Sidang Dewan Direksi Kembali Terbuka',
     body: 'Sepuluh minggu penuh kegilaan akhirnya mencapai garis akhir. Seluruh direksi, komisaris, dan investor berkumpul kembali di ruang rapat lantai 12 untuk mengetuk palu vonis nasib PT Ruang Tumbuh Indonesia.',
     button: 'Hadapi Sidang Penghakiman →'

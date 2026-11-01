@@ -31,11 +31,11 @@ function showStart() {
   aside.innerHTML = '';
   main.innerHTML = `
     <section class="story-screen cover">
-      <img class="title-logo" src="assets/title-logo.png" alt="Aku Direkrut Jadi CMO Saat Perusahaan Ini Cuma Punya 50 Hari — RE:GROWTH">
-      <div class="cover-subtitle">Sepuluh minggu. Lima puluh hari kerja. Satu kesempatan gila.</div>
+      <img class="title-logo" src="assets/title-logo-60.png" alt="Aku Direkrut Jadi CMO Saat Perusahaan Ini Cuma Punya 60 Hari — RE:GROWTH">
+      <div class="cover-subtitle">Sepuluh babak. Enam puluh hari. Satu kesempatan gila.</div>
       <p>Ruang Tumbuh berada di ujung tanduk. Sebagai CMO baru, pimpin tim membongkar krisis kas, mengintai kompetitor di Senopati, hingga menjelajahi favela Brazil sebelum vonis akhir direksi.</p>
       <div class="cover-stakes">
-        <span>10 MINGGU / 50 HARI</span>
+        <span>10 MINGGU / 60 HARI</span>
         <span>ABSURD SCENARIOS</span>
       </div>
       <button class="primary" id="start">Mulai cerita →</button>
@@ -62,7 +62,7 @@ function showArrival() {
           <div class="speaker">Kamu · CMO Baru</div>
           <div class="dialogue">“Setelah tujuh ronde interview gila dan tes psikologi yang absurd, akhirnya hari ini tiba. Ini dia menara kantor Ruang Tumbuh.”</div>
           <h2>Tiba di depan kantor Ruang Tumbuh</h2>
-          <p>Kamu berdiri di pelataran depan gedung perkantoran megah Jakarta. Menurut kabar burung, kas perusahaan tinggal 50 hari kerja, penjualan turun drastis, dan para dewan direksi sudah menunggu di lantai 12. Jam di tangan menunjukkan pukul 08.45 WIB. Apa yang kamu lakukan sebelum melangkah masuk?</p>
+          <p>Kamu berdiri di pelataran depan gedung perkantoran megah Jakarta. Menurut kabar burung, kas perusahaan tinggal 60 hari, penjualan turun drastis, dan para dewan direksi sudah menunggu di lantai 12. Jam di tangan menunjukkan pukul 08.45 WIB. Apa yang kamu lakukan sebelum melangkah masuk?</p>
         </div>
         <div class="story-question">Apa tindakan pertamamu di pelataran gedung?</div>
         <div class="story-choices">
@@ -225,7 +225,7 @@ function showWelcome() {
     <section class="story-screen" style="background-image:url(assets/office.png)">
       <header class="story-head">
         <div class="day-title">LOBI UTAMA · LANTAI 1</div>
-        <div class="day-meta">HARI KERJA<strong>01 / 50</strong></div>
+        <div class="day-meta">HARI PERTAMA<strong>01 / 60</strong></div>
       </header>
       <img class="story-character" src="assets/founder.png" alt="Damar CEO">
       <div class="story-body">
@@ -233,7 +233,7 @@ function showWelcome() {
           <div class="speaker">Damar · CEO</div>
           <div class="dialogue">“Syukurlah kamu sudah sampai! Masuk ke lift sekarang—Mira, Bagas, dan komisaris sudah berkumpul di ruang sidang lantai 12. Kas kita sekarat dan unicorn sebelah mulai menyerang, jadi siapkan nyalimu!”</div>
           <h2>Disambut di Lobi PT Ruang Tumbuh</h2>
-          <p>Begitu kamu melewati gerbang kaca lobi, Damar langsung menghampirimu di depan lift eksekutif sambil memegang setumpuk map merah. Waktu evaluasi sepuluh minggu (50 hari kerja) resmi dimulai detik ini.</p>
+          <p>Begitu kamu melewati gerbang kaca lobi, Damar langsung menghampirimu di depan lift eksekutif sambil memegang setumpuk map merah. Misi penyelamatan selama 60 hari resmi dimulai detik ini.</p>
         </div>
         <div class="story-choices">
           <button class="story-choice" id="board">Naik lift ke ruang sidang lantai 12 →</button>
@@ -285,15 +285,13 @@ function showGame() {
       ? 'founder-worried'
       : week.sprite;
 
-  const currentDay = (state.week * 5) + 1;
-
   aside.innerHTML = '';
   main.innerHTML = `
     <section class="story-screen" style="background-image:url(assets/${week.background}.png)">
       <header class="story-head">
         <div class="day-title">MINGGU ${state.week + 1}</div>
         <div class="day-meta">
-          HARI ${currentDay}/50
+          MISI 60 HARI
           <strong>◉ KAS ${state.stats.cash} · ⚡ CHAOS ${state.stats.chaos}</strong>
         </div>
       </header>
@@ -371,7 +369,7 @@ function showResult() {
         <p class="result-ending">${ending.body}</p>
 
         <div class="result-card result-scores">
-          <h2>Indikator Akhir 50 Hari</h2>
+          <h2>Indikator Akhir 60 Hari</h2>
           <p class="result-hint">Skala metrik 0–100</p>
           <div class="result-score-grid">
             ${scores.map(([name, value]) => `
