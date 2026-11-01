@@ -404,4 +404,99 @@ function showResult() {
   document.querySelector('#restart').onclick = reset;
 }
 
+// Cabang perjalanan menuju Senopati. Semua jalur yang selamat kembali ke minggu kedua.
+const travelScenes = {
+  travel_transport: {
+    background: 'street-traffic', location: 'DEPAN KANTOR', title: 'Berangkat ke Senopati',
+    speaker: 'Damar · CEO', dialogue: 'Gue duluan, ya. Aldi udah buka laptopnya. Pilih kendaraan yang bikin lo bisa nyusul sebelum dia tutup presentasi!',
+    body: 'Dari depan kantor, kamu punya tiga pilihan untuk menyusul Damar ke kafe. Jalan utama tampak padat, tapi keadaan Jakarta bisa berubah setiap menit.',
+    question: 'Mau berangkat naik apa?',
+    options: [['Pakai mobil kantor', 'travel_car'], ['Naik Gojek', 'travel_gojek'], ['Naik MRT', 'travel_mrt']]
+  },
+  travel_car: {
+    background: 'travel-traffic', location: 'JALAN SUDIRMAN', title: 'Ada apa di depan?',
+    speaker: 'Pak Joko · Sopir Kantor', dialogue: 'Waduh, Pak. Dari tadi mobilnya nggak gerak. Di depan kayaknya ada kerumunan, tapi saya belum bisa lihat jelas.',
+    body: 'Lampu rem memanjang sampai tikungan. Di kejauhan terdengar suara pengeras suara dan orang-orang memenuhi jalan. Damar mengirim pesan: “Cepat, Aldi sudah pesan kopi kedua.”',
+    question: 'Apa yang kamu lakukan?',
+    options: [['Penasaran, turun dan lihat keramaiannya', 'travel_demo'], ['Tetap di mobil dan lanjut saat jalan terbuka', 'travel_arrive']]
+  },
+  travel_demo: {
+    background: 'travel-protest', location: 'TENGAH KOTA', title: 'Terseret arus massa',
+    speaker: 'Peserta Aksi', dialogue: 'Mas, jangan bengong di tengah jalan! Kalau mau ikut, sini pegang kardusnya!',
+    body: 'Ternyata ada aksi demonstrasi. Seorang peserta menyodorkan kardus bekas bertuliskan tuntutan yang belum sempat kamu baca. Sopir kantor menunggu di ujung jalan sambil melambaikan tangan.',
+    question: 'Kamu memilih apa?',
+    options: [['Ikutan demo dan angkat kardusnya', 'travel_arrest_demo'], ['Balik ke mobil dan lanjut ke kafe', 'travel_arrive']]
+  },
+  travel_gojek: {
+    background: 'travel-gojek', location: 'SENOPATI', title: 'Tiba tanpa drama',
+    speaker: 'Driver Gojek', dialogue: 'Sudah sampai, Kak. Semoga meeting-nya lancar!',
+    body: 'Kamu turun di depan kafe dan melihat Damar melambai dari balik jendela. Emang pake Gojek gak pake ribet melewati macet #GojekAja',
+    question: '', options: [['Temui Damar di kafe', 'game']]
+  },
+  travel_mrt: {
+    background: 'travel-mrt', location: 'DI DALAM MRT', title: 'Penumpang paling tidak terduga',
+    speaker: 'Kamu · CMO Baru', dialogue: 'Sebentar... itu Presiden? Di gerbong yang sama? Ini Jakarta atau simulasi?',
+    body: 'Di ujung gerbong, Presiden fiksi negeri ini sedang meninjau transportasi umum bersama pengawal. Pintu akan terbuka di stasiun berikutnya—waktumu untuk mencapai Senopati makin tipis.',
+    question: 'Apa yang kamu lakukan?',
+    options: [['Cuek saja dan turun di stasiun tujuan', 'travel_arrive'], ['Menyapa Presiden', 'travel_arrest_mrt']]
+  },
+  travel_arrive: {
+    background: 'senopati-cafe', location: 'KAFE SENOPATI', title: 'Akhirnya sampai',
+    speaker: 'Damar · CEO', dialogue: 'Akhirnya! Cepat duduk. Aldi baru saja buka slide yang kayaknya penting.',
+    body: 'Kamu berhasil menyusul Damar. Di meja seberang, Aldi sedang memamerkan presentasinya. Misi mengintai kompetitor pun dimulai.',
+    question: '', options: [['Masuk ke kafe', 'game']]
+  }
+};
+
+const travelEndings = {
+  travel_arrest_demo: {
+    title: 'CMO di Balik Jeruji',
+    body: 'Baru saja kamu mengangkat kardus, barisan pengamanan bergerak membubarkan kerumunan. Dalam kekacauan, kamu ikut diamankan bersama massa. Ponselmu tertinggal di mobil, Damar menunggu di kafe, dan rapat terpenting minggu ini resmi berubah menjadi urusan kantor polisi. Karier CMO-mu berakhir sebelum sempat memesan kopi.',
+    note: 'Satu kardus. Satu perjalanan yang melenceng jauh.'
+  },
+  travel_arrest_mrt: {
+    title: 'Salam yang Terlalu Mahal',
+    body: '“Pak Presiden, boleh networking sebentar?” sapamu sambil meraih kartu nama. Pengawal salah mengira gerakan mendadakmu sebagai ancaman dan langsung mengamankanmu. Beberapa jam kemudian, kamu masih di sel menunggu kesalahpahaman dijelaskan. Damar sudah menyelesaikan kopi ketiganya sendirian; misi Senopati gagal total.',
+    note: 'Kadang kartu nama perlu menunggu waktu yang tepat.'
+  }
+};
+
+function showTravel() {
+  aside.innerHTML = '';
+  const ending = travelEndings[state.page];
+  if (ending) {
+    main.innerHTML = `
+      <section class="story-screen result-screen" style="background-image:url(assets/travel-cell.png)">
+        <div class="result-content">
+          <div class="eyebrow" style="color:#ff8569">★ BAD ENDING ★</div>
+          <h1>${ending.title}</h1><p class="result-ending">${ending.body}</p>
+          <button class="primary" id="restart">Main lagi ↻</button>
+          <p class="result-note">${ending.note}</p>
+        </div>
+      </section>`;
+    document.querySelector('#restart').onclick = reset;
+    return;
+  }
+  const scene = travelScenes[state.page];
+  if (!scene) { state.page = state.pending; render(); return; }
+  main.innerHTML = `
+    <section class="story-screen" style="background-image:url(assets/${scene.background}.png)">
+      <header class="story-head"><div class="day-title">MINGGU 2</div><div class="day-meta">${scene.location}<strong>OTW SENOPATI</strong></div></header>
+      <div class="story-body"><div class="story-panel"><div class="speaker">${scene.speaker}</div>
+        <div class="dialogue">“${scene.dialogue}”</div><h2>${scene.title}</h2><p>${scene.body}</p></div>
+        ${scene.question ? `<div class="story-question">${scene.question}</div>` : ''}
+        <div class="story-choices"${scene.question ? '' : ' style="margin-top:16px"'}>
+          ${scene.options.map(([label], index) => `<button class="story-choice" data-travel-choice="${index}">${label} →</button>`).join('')}
+        </div>
+      </div>
+    </section>`;
+  document.querySelectorAll('[data-travel-choice]').forEach(button => {
+    button.onclick = () => {
+      state.page = scene.options[Number(button.dataset.travelChoice)][1];
+      render();
+      window.scrollTo(0, 0);
+    };
+  });
+}
+
 render();

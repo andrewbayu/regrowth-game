@@ -706,9 +706,9 @@ const transitions = {
   1: {
     background: 'street-traffic',
     title: 'TRANSISI PERJALANAN · OTW SENOPATI',
-    heading: 'Membelah Kemacetan Jakarta Menuju Senopati',
-    body: 'Berbekal intel rahasia Kevin, kamu dan Damar meluncur naik taksi membelah kemacetan jalanan Sudirman-Senopati. Di sebuah kafe artisanal mahal, Aldi Pratama si rival CMO sedang bersiap memamerkan roadmap produk rahasianya.',
-    button: 'Tiba di Kafe Senopati →'
+    heading: 'Misi Mendadak ke Senopati',
+    body: 'Kevin menemukan lokasi Aldi: sebuah kafe di Senopati. Damar sudah berangkat lebih dulu untuk mengamankan meja. Kamu harus segera menyusul sebelum presentasi rival CMO itu selesai.',
+    button: 'Tentukan cara berangkat →'
   },
   2: {
     background: 'office',
@@ -1073,7 +1073,7 @@ function advanceReaction() {
 }
 
 function proceedTransition() {
-  state.page = state.pending;
+  state.page = state.week === 1 ? 'travel_transport' : state.pending;
   render();
   window.scrollTo(0, 0);
 }
@@ -1086,6 +1086,7 @@ function render() {
   else if (state.page === 'fire') showFire();
   else if (state.page === 'bad_ending_fire') showBadEndingFire();
   else if (state.page === 'welcome') showWelcome();
+  else if (state.page.startsWith('travel_')) showTravel();
   else if (state.page === 'transition') showTransition();
   else if (state.page === 'game') showGame();
   else if (state.page === 'reaction') showReaction();

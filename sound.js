@@ -158,7 +158,7 @@
     if (audioContext.state === 'suspended') audioContext.resume();
 
     const page = state.page;
-    const tense = page === 'fire' || page === 'smoke' || page === 'bad_ending_fire' ||
+    const tense = page === 'fire' || page === 'smoke' || page === 'bad_ending_fire' || page.startsWith('travel_arrest') || page === 'travel_demo' ||
       (page === 'reaction' && state.lastDelta && state.lastDelta.cash < 0);
     const notes = tense ? [180, 120] : page === 'starling' ? [880, 1175] :
       page === 'transition' ? [330, 440, 554] :
