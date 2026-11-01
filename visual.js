@@ -463,7 +463,7 @@ const travelScenes = {
     question: '', options: [['Temui Damar di kafe', 'game']]
   },
   travel_mrt: {
-    background: 'travel-mrt-v2', location: 'DI DALAM MRT', title: 'Penumpang paling tidak terduga',
+    background: 'travel-mrt-empty', sprite: 'president-censored', spriteAlt: 'Presiden fiksi dengan sensor hitam di mata', location: 'DI DALAM MRT', title: 'Penumpang paling tidak terduga',
     speaker: 'Kamu · CMO Baru', dialogue: 'Sebentar... itu Presiden? Di gerbong yang sama?',
     body: 'Presiden fiksi sedang meninjau MRT bersama pengawal. Stasiunmu berikutnya; waktu ke Senopati makin mepet.',
     question: 'Apa yang kamu lakukan?',
@@ -512,6 +512,7 @@ function showTravel() {
   main.innerHTML = `
     <section class="story-screen${state.page === 'travel_demo' ? ' protest-scene' : ''}" style="background-image:url(assets/${scene.background}.png)">
       <header class="story-head"><div class="day-title">MINGGU 2</div><div class="day-meta">${scene.location}<strong>OTW SENOPATI</strong></div></header>
+      ${scene.sprite ? `<img class="story-character" src="assets/${scene.sprite}.png" alt="${scene.spriteAlt}">` : ''}
       <div class="story-body"><div class="story-panel"><div class="speaker">${scene.speaker}</div>
         <div class="dialogue">“${scene.dialogue}”</div><h2>${scene.title}</h2><p>${scene.body}</p></div>
         ${scene.question ? `<div class="story-question">${scene.question}</div>` : ''}
